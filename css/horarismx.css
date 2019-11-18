@@ -1,1 +1,44 @@
-p
+h2
+{
+    color: blue;
+}
+.m10
+{
+    background-color: grey;
+    text-align: center;
+}
+
+.sistemas
+{
+    background-color: cornflowerblue;
+    text-align: center;
+
+}
+
+.xarxes
+{
+    background-color: plum;
+    text-align: center;
+
+}
+
+.aplicacions
+{
+    background-color: yellowgreen;
+    text-align: center;
+
+}
+
+.seguretat
+{
+    background-color: olivedrab;
+    text-align: center;
+
+}
+
+.descans
+{
+    background-color: cyan;
+    text-align: center;
+
+}
