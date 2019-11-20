@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+    comentaris externs
+-->
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Curriculum</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="css/FormulariCurriculum.css"/>
+    </head>
+    <body>
+    
+
+        <h2>Ficha de reclutamiento</h2>
+        <form action="form.html" method="GET" enctype="multipart/form-data"> 
+
+         <fieldset>
+             <legend>Información principal</legend>
+            <h4>Nombre</h4>
+            <label>Pon tu nombre</label>
+            <input type="text" id="id_text" name="n_text" value="" placeholder="Nombre completo"/>
+
+          <h4>Fecha de nacimiento</h4>
+
+          <label for="id_date">Tu fecha:</label>
+          <input type="date" id="id_date" name="n_date" value="01-01-1999" placeholder="Format 00-00-0123"/>
+          
+            <h4>Tu altura</h4>
+                <label for="id_number">Centímetros:</label>
+                <input type="number" name="quantity" cm="0"/>
+        
+          </fieldset>   
+          
+          <fieldset>
+            <legend>Permisos</legend>
+            <h2>Licencia de armas</h2>
+                <label for="id_multiselect">Selecciona tu licencia de armas:</label>
+                <select multiple id="id_multiselect" name="n_multiselect[]">
+                    <option value="a" selected="selected">Licencia B</option>
+                    <option value="c" selected="selected">Licencia C</option>
+                    <option value="g">Licencia D</option>
+                    <option value="t">Licencia E</option>
+                    <option value="r">Licencia F</option>
+
+                </select>
+ 
+
+
+
+
+          </fieldset>
+          
+
+        </form>
+
+    </body>
+</html>
