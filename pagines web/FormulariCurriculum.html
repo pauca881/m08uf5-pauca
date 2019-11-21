@@ -9,62 +9,76 @@
     <body>
     
 
-        <h2>Ficha de reclutamiento</h2>
+        <h2 class="info">Ficha de reclutamiento</h2>
         <form action="form.html" method="GET" enctype="multipart/form-data"> 
 
-         <fieldset>
-             <legend>Información principal</legend>
-            <h4>Nombre</h4>
-            <label>Pon tu nombre</label>
+         <fieldset class="principal">
+            <Legend> <u>Información principal</u></Legend>
+            <label>Nombre</label><br/>
             <input type="text" id="id_text" name="n_text" value="" placeholder="Nombre completo"/>
 
           <h4>Fecha de nacimiento</h4>
 
           <label for="id_date">Tu fecha:</label>
-          <input type="date" id="id_date" name="n_date" value="01-01-1999" placeholder="Format 00-00-0123"/>
+          <input type="date" id="id_date" name="n_date" value="2017-12-31" />
           
             <h4>Tu altura</h4>
-                <label for="id_number">Centímetros:</label>
-                <input type="number" name="quantity" cm="0"/>
+                <label>Centímetros:</label>
+                <input type="number" name="quantity" value="0"/>
         
           </fieldset>   
           
-          <fieldset>
-            <legend>Permisos ( ! Aprieta el botón control + ratón para seleccionar opciones ! )</legend>
-            <h3>Licencia de armas</h3>
-                <label for="id_multiselect">Selecciona tu licencia de armas:</label>
-                <select multiple id="licencia a" name="n_multiselect1[]">
-                    <option value="a">Licencia B</option>
-                    <option value="c" >Licencia C</option>
-                    <option value="g">Licencia D</option>
-                    <option value="t">Licencia E</option>
-                    <option value="r">Licencia F</option>
-                    <option value="s" selected="selected">No tengo</option>
+          <fieldset class="licencias">
+                <Legend> <u>Permisos ( Botón control + botón raton)</u></Legend>
+                <h4>Licencia de armas</h4>
+                <label >Selecciona tu licencia de armas:</label>
+                <select name="OS">
+                        <option value="1">Licencia B</option> 
+                        <option value="2">Licencia C</option> 
+                        <option value="3">Licencia D</option>
+                        <option value="10">Licencia E</option> 
+                        <option value="11">Licencia F</option> 
+                        <option value="12">No tengo licencia</option> 
+                     </select>
 
-                </select>
+            <h4>Licencia de conducir</h4>
+                <label>Selecciona tus licencias en posesión:</label>
+                <select name="OS">
+                        <option value="1">Coches B</option> 
+                        <option value="2">Motos A1/A2</option> 
+                        <option value="3">Camiones C</option>
+                        <option value="10">Buses D</option> 
+                        <option value="11">Otras</option> 
+                        <option value="12">No tengo licencia</option> 
+                     </select>
 
-            <h3>Licencia de conducir</h3>
-                <label for="id_multiselect">Selecciona tus licencias en posesión:</label>
-                <select multiple id="licencia veh" name="n_multiselect2[]">
-                    <option value="a" >Licencia de Coches B</option>
-                    <option value="c" >Licencia de motos A1/A2</option>
-                    <option value="d" >Licencia de camiones C</option>
-                    <option value="i" >Licencia de buses D</option>
-                    <option value="c" selected="selected"> No tengo</option>
+            </fieldset>
 
 
+            <fieldset class="pais">
+            <Legend> <u>Nacionalidad</u></Legend>
+            <input type="radio" id="id_radio1" name="n_radio" value="a" checked/>Español
+            <input type="radio" id="id_radio2" name="n_radio" value="c"/>Extranjero irregular
+            <input type="radio" id="id_radio3" name="n_radio" value="g"/>Extranjero regular
+            <input type="radio" id="id_radio4" name="n_radio" value="t"/>Doble nacionalidad
+            </fieldset>
 
-                </select>
+            <fieldset class="enviar">
+                <legend> </legend>
+                
+                <input type="submit" id="id_submit" name="n_submit" value="Enviar"/>
+ 
+                <input type="reset" id="id_reset" name="n_reset" value="Cancelar y Reintentar"/>
+
+
+            </fieldset>
  
 
 
-
-
-
-          </fieldset>
-          
-
         </form>
+
+        <img src="../imatges/validacioformulari.png" alt="imatge de la validacioo"/>
+
 
     </body>
 </html>
