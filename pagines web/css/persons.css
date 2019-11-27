@@ -2,3 +2,24 @@
 {
     font-family: 'Abril Fatface', cursive; 
 }
+
+table{
+    text-align: center;
+    border: 1px solid;
+}
+
+td{
+    text-align: center;
+    border: 1px solid;
+}
+
+.rojo
+{
+    color: red;
+    text-align: center
+}
+
+#Celdas
+{
+    
+}

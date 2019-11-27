@@ -1,0 +1,118 @@
+#imatge{
+    position: relative;
+    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+}
+
+
+.cuadro1, .cuadro5, .cuadro7, .cuadro10, .cuadro12
+{
+    background-color: green;
+}
+
+.cuadro2, .cuadro4, .cuadro6, .cuadro9, .cuadro11
+{
+    background-color: greenyellow;
+}
+
+.cuadro3, .cuadro8
+{
+    background-color: black;
+}
+
+.cuadro1{
+    border: 1px solid white;
+    float: left;
+    width: 400px;
+    height: 70px;
+
+}
+
+.cuadro2{
+    border: 1px solid white;
+    float: left;
+    width: 190px;
+    height: 67px;
+
+}
+
+
+.cuadro3{
+    border: 1px solid white;
+    float: left;
+    width: 200px;
+    height: 140px;
+
+}
+
+.cuadro4{
+    border: 1px solid white;
+    float: left;
+    width: 200px;
+    height: 140px;
+
+}
+
+.cuadro5{
+    border: 1px solid white;
+    float: left;
+    width: 190px;
+    height: 67px;
+
+}
+
+.cuadro6{
+    border: 1px solid white;
+    float: left;
+    width: 190px;
+    height: 67px;
+
+}
+.cuadro7{
+    border: 1px solid white;
+    float: left;
+    width: 398px;
+    height: 70px;
+
+}
+
+.cuadro9{
+    border: 1px solid white;
+    float: left;
+    width: 400px;
+    height: 68px;
+
+}
+
+.cuadro8{
+    border: 1px solid white;
+    float: right;
+    width: 195px;
+    height: 138px;
+
+}
+
+.cuadro10{
+    border: 1px solid white;
+    float: left;
+    width: 197px;
+    height: 66px;
+
+}
+
+.cuadro11{
+    border: 1px solid white;
+    float: left;
+    width: 197px;
+    height: 67px;
+
+}
+
+.cuadro12{
+    border: 1px solid white;
+    float: left;
+    width: 197px;
+    height: 67px;
+
+}
