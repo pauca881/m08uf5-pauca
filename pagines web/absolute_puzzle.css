@@ -1,0 +1,138 @@
+#imatge{
+    position: relative;
+    border: 1px solid white;
+    width: 600px;
+    height: 600px;
+}
+
+
+.cuadro1, .cuadro4, .cuadro6, .cuadro7
+{
+    background-color: green;
+}
+
+.cuadro2, .cuadro5, .cuadro10, .cuadro11, .cuadro12
+{
+    background-color: greenyellow;
+}
+
+.cuadro3, .cuadro8, .cuadro9
+{
+    background-color: black;
+}
+
+.cuadro1{
+    border: 1px solid white;
+    position: absolute;
+    width: 400px;
+    height: 70px;
+    left: 36px;
+    top: 20px;
+
+}
+
+.cuadro2{
+    border: 1px solid white;
+    position: absolute;
+    width: 200px;
+    height: 70px;
+    left: 442px;
+    top: 20px;
+}
+
+.cuadro3{
+    border: 1px solid white;
+    position: absolute;
+    width: 200px;
+    height: 140px;
+    left: 36px;
+    top: 95px;
+
+}
+
+.cuadro4{
+    border: 1px solid white;
+    position: absolute;
+    width: 200px;
+    height: 66px;
+    left: 442px;
+    top: 95px;
+
+}
+
+.cuadro5{
+    border: 1px solid white;
+    position: absolute;
+    width: 200px;
+    height: 66px;
+    left: 442px;
+    top: 166px;
+
+}
+
+.cuadro6{
+    border: 1px solid white;
+    position: absolute;
+    width: 200px;
+    height: 211px;
+    left: 239px;
+    top: 95px;
+
+}
+
+.cuadro7{
+    border: 1px solid white;
+    position: absolute;
+    width: 200px;
+    height: 66px;
+    left: 37px;
+    top: 240px;
+
+}
+
+.cuadro8{
+    border: 1px solid white;
+    position: absolute;
+    width: 200px;
+    height: 140px;
+    left: 37px;
+    top: 311px;
+
+}
+
+.cuadro9{
+    border: 1px solid white;
+    position: absolute;
+    width: 200px;
+    height: 140px;
+    right: -45px;
+    top: 237px;
+
+}
+
+.cuadro10{
+    border: 1px solid white;
+    position: absolute;
+    width: 199px;
+    height: 65px;
+    left: 240px;
+    top: 312px;
+}
+
+.cuadro11{
+    border: 1px solid white;
+    position: absolute;
+    width: 200px;
+    height: 70px;
+    left: 240px;
+    top: 381px;
+}
+
+.cuadro12{
+    border: 1px solid white;
+    position: absolute;
+    width: 200px;
+    height: 70px;
+    right: -45px;
+    top: 381px;
+}
