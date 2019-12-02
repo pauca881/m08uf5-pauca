@@ -23,3 +23,13 @@ td{
 {
     
 }
+
+#tablaa
+{
+    background-color: orange
+}
+
+.rojo:hover
+{
+opacity:0.5;
+}

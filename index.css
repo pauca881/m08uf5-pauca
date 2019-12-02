@@ -1,0 +1,55 @@
+#cabecera{
+    background-color: brown;
+    width:100%;
+    height: 300px;
+    position: relative;
+    text-align: center
+}
+
+#img{
+    top: 100px;
+    left: 200px;
+    position: absolute;
+}
+
+#principal{
+    background-color: black;
+}
+
+#Index {
+    background-color: crimson;
+    float:left;
+    height:480px;
+    padding:20px;
+    width:180px;
+  }
+
+  #contingut {
+    background-color: navy;
+    float:left;
+    height:192px;
+    padding:164px;
+    width:1050px;
+    color: yellowgreen
+  }
+
+#peu { 
+        background-color: purple;
+        clear:both;
+        color: yellow;
+        padding:10px;
+        text-align:center;
+      }
+
+#BANNER{
+    background-color: antiquewhite;
+    top: 343px;
+    right: 7px;
+    height: 520px;
+    width: 294px;
+    position: absolute;
+}
+
+h1{
+    color: aqua
+}
