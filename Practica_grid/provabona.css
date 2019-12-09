@@ -1,0 +1,21 @@
+div{
+    border: solid 1px black
+}
+
+#primerdiv
+{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+
+}
+
+#div2
+{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+
+
