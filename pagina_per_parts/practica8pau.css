@@ -75,22 +75,45 @@ nav a:hover
     border-top: 3px solid #760001;
 }
 
+/*3ra part */
+
+
 #banner_image
 {
+    background: url('imatges/sanfrancisco.jpg') no-repeat;
+    height: 200px; 
+    margin-top: 5px;
+    position: relative;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    box-shadow: 0px 4px 4px orange;
+    color: purple;
 
 }
 
 #banner_description
 {
+    position: absolute;
+    border-radius: 0px 0px 5px 5px;
+    width: 99,5%;
+    height: 33px;
+    padding-top: 15px;
+    padding-left:4px ;
+    color: white;
+    font-size: 0.8em;
+    background-color: rgba(24,24,24,0.8);
+    bottom: 1px;
+
 
 }
 
-#red_button
+.red_button
 {
     display: inline-block;
     height: 25px;
     position: absolute;
-    right: 5px;
+    right:5px;
     bottom: 5px;
     background: url('imatges/red_background.png') repeat-x;
     border: 1px solid #760001;
@@ -100,4 +123,120 @@ nav a:hover
     padding: 3px 8px 0px 8px;
     color: white;
     text-decoration: none;
+}
+
+
+/* part 4*/
+
+article, aside
+{
+    display: inline-block;
+    text-align: justify;
+    vertical-align: top;
+    margin-right: 5px;
+
+
+}
+
+article
+{
+    width: 625px;
+    margin-right: 8px;
+
+}
+
+.ico_categorie
+{
+    margin-right: 8px;
+    vertical-align: middle;
+} 
+
+
+article p
+{
+    font-size: 0.8em
+}
+
+
+aside
+{
+    width: 235px;
+    background-color: gray;
+    box-shadow: 0px 2px 5px gray;
+    padding: 10px;
+    color: white;
+    font-size: 0.9em;
+    margin-right: 5px;
+
+}
+
+aside h1
+{
+    margin-right: 5px;
+
+}
+
+#arrow
+{
+    top: 25px;
+    left: 250px;
+}
+
+#zozor_picture
+{
+    text-align: center
+
+}
+
+aside img /*separo les imatges entre si*/
+{
+    margin-right: 5px;
+
+}
+
+#autor{
+    border: 1px solid #181818;
+
+}
+
+
+/* part 5*/
+
+#tweet, #my_pictures, #my_friends
+{
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+#tweet
+{
+    width: 28%;
+
+}
+
+#my_pictures
+{
+    width: 35%;
+
+}
+
+#my_friends
+{
+    width: 31%;
+   
+
+}
+
+#my_pictures img
+{
+
+
+}
+
+#fotos{
+    display:inline-block;
+    margin-top: 0px;
+    width: 48%;
+    padding-right: 2px; 
 }
