@@ -1,0 +1,199 @@
+@font-face{
+  font-family: jokerman;
+  src: url(../media/jooker.ttf);
+}
+
+#corner2 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    display: inline-block;
+  }
+
+  #corner1 {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    display: inline-block;
+  }
+
+
+  #corner3 {
+    border-radius: 80px 25px;
+    border: 2px solid #73AD21;
+    background: chocolate;
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    display: inline-block;
+  }
+
+  #corner4 {
+    border-radius: 25px 75px;
+    border: 2px solid #73AD21;
+    background: purple;
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    display: inline-block;
+  }
+
+  #p1 {background-color: rgba(233, 10, 10, 0.904);}  /* red with opacity */
+  #p2 {background-color: rgba(251, 255, 0, 0.979);}  /* green with opacity */
+  #p3 {background-color: rgba(141, 5, 5, 0.904);}  /* red with opacity */
+  #p4 {background-color: rgba(186, 189, 38, 0.979);}  /* green with opacity */
+
+#centro{ 
+    background-image: linear-gradient(red, yellow);
+    width: 50%;
+    height: 200px;
+    text-align: center;
+
+}
+
+#centro p{
+  font-family: jokerman;
+}
+
+#izquierda{
+    background-image: linear-gradient(to right, red, yellow);
+    width: 50%;
+    height: 200px;
+
+}
+
+#izquierda p{
+  font-family: jokerman;
+}
+
+
+#grad {
+    background-image: radial-gradient(circle, red, yellow, green);
+    height: 300px;
+    width: 300px
+  }
+
+h1{
+    text-shadow: 0 0 3px purple, 0 0 5px #0000ff; 
+}
+
+#div123{
+    box-shadow: 5px 5px 3px black;
+    background-color: yellow;
+    width: 25%;
+    height: 100px;
+}
+
+#div1234{
+    box-shadow: 5px 5px 3px gray;
+    background-color: yellow;
+    width: 400px;
+    height: 100px;
+    margin: 100px;
+    display: inline-block;
+
+}
+
+#trans{
+  margin: 10px;
+  width: 300px;
+  height: 100px;
+  background-color: blue;
+  border: solid 3px black;
+  display: inline-block
+  transform: translate(50px, 100px);
+}
+
+#trans2{
+  margin: 10px;
+  width: 300px;
+  height: 100px;
+  background-color: blue;
+  border: solid 3px black;
+  display: inline-block;
+  transform: rotate(80deg);
+}
+
+#trans3{
+  margin: 50px;
+  width: 300px;
+  height: 100px;
+  background-color: blue;
+  border: solid 3px black;
+  display: inline-block;
+  transform: scale(3,2);
+
+}
+
+.animacio{
+  color:red;
+position: absolute;
+font-weight: bold;
+font-size: 15px;
+padding: 10px;
+float: left;
+margin: 5px;
+-webkit-transition: -webkit-transform 1s,opacity 1s,background 1s,width 1s,height 1s,font-size 1s;
+transition-property: width,height,transform,background,font-size,opacity;
+transition-duration: 2s,2s,2s,2s,2s,2s;
+border-radius: 5px;
+display:inline-block;
+box-sizing: inherit;
+}
+
+.animacio:hover{
+  opacity: 1;
+background: green;
+width: 130px;
+height: 80px;
+font-size: 35px;
+}
+
+#ex88{
+width: 70px;
+height: 47px;
+background: red;
+color: black;
+position: relative;
+font-size: 20px;
+padding: 10px;
+animation-duration: 4s;
+animation-delay: 2s;
+animation-name: ex88;
+animation-iteration-count: 3;
+}
+
+@keyframes ex88{
+  0%   {background-color: red; left: 0px; top: 0px;}
+  25%   {background-color:green; left: 300px; top: 0px;}
+  50%  {background-color:yellow; left: 300px; top: 300px}
+  75%   {background-color: blue; left: 0px; top: 300px;}
+  100%   {background-color: red; left: 0px; top: 0px;}
+
+
+
+}
+
+#div8{
+  height: 400px;
+  width: 400px;
+}
+
+#div7{
+  height: 200px;
+  width: 200px;
+}
+
+#columnas{
+  column-count: 3;
+  column-gap: 60px;
+  column-rule-width: 1px;
+}
