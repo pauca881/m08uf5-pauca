@@ -1,0 +1,81 @@
+
+
+#main{
+    width: 830px;
+    height: 1000px;
+    border: solid black;
+    background-color: #fef2cd 
+}
+
+#zodiaco{
+    position: absolute;
+    top: 161px;
+    left: 8px;
+}
+
+#srsbl{
+    position: absolute;
+    top: 251px;
+    height: 134px;
+}
+
+#sighted{
+    position: absolute;
+    top: 385px;
+    left: 200px;
+}
+
+#izq1{
+    position: absolute;
+    top: 385px;
+    left: 31px;
+}
+
+#izq2{
+    position: absolute;
+    top: 550px;
+    left: 31px;
+
+}
+
+#izq3{
+    position: absolute;
+    top: 823px;
+    left: 31px;
+
+}
+
+#dr1{
+    position: absolute;
+    top: 385px;
+    right: 125px;
+}
+
+#dr2{
+    position: absolute;
+    top: 824px;
+    right: 120px;
+}
+
+#gif{
+    position: absolute;
+    top: 530px;
+    left: 200px;
+    height: 400px;
+    width: 442px;
+}
+
+#why{
+    position: absolute;
+    top: 939px;
+    left: 198px;
+    height: 170px;
+    width: 450px;
+}
+
+#pie{
+    position: absolute;
+    top: 980px;
+    left: 198px;
+}
+
