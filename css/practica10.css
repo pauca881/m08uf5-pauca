@@ -10,13 +10,14 @@
 #zodiaco{
     position: absolute;
     top: 161px;
-    left: 8px;
+    left: 10px;
 }
 
 #srsbl{
     position: absolute;
     top: 251px;
     height: 134px;
+    width: 829px;
 }
 
 #sighted{
@@ -75,7 +76,8 @@
 
 #pie{
     position: absolute;
-    top: 980px;
-    left: 198px;
+    top: 1122px;
+    left: 45px;
+    border-top: 4px solid black
 }
 
