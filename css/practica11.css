@@ -1,0 +1,44 @@
+
+.prim{
+    border: 1px solid black;
+}
+
+#td1{
+    width: 200px;
+    height: 200px; 
+    border-radius: 10px;
+}
+
+#td1:hover{
+    transition: transform .2s;
+    transform:scale(0.8);
+    -ms-transform:scale(0.8);
+}
+
+#td1text{
+
+    transform:translate(0px,-20px);
+    opacity: 1;
+}
+        
+            
+
+#stan{
+    width: 200px;
+    height: 200px;
+}
+
+#kyle{
+    width: 200px;
+    height: 200px;
+}
+
+#cartman{
+    width: 200px;
+    height: 200px;
+}
+
+#kenny{
+    width: 200px;
+    height: 200px;
+}
