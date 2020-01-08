@@ -7,18 +7,76 @@
     width: 200px;
     height: 200px; 
     border-radius: 10px;
+    transition: transform 1s;
+
 }
+
+
 
 #td1:hover{
-    transition: transform .2s;
     transform:scale(0.8);
     -ms-transform:scale(0.8);
+    -webkit-transition: all 500ms ease-in-out; // IE 9
+        -moz-transition: all 500ms ease-in-out; // Firefox
+        -ms-transition: all 500ms ease-in-out; // Safari and Chrome 
+        -o-transition: all 500ms ease-in-out; // Opera
+        
+transition-duration: 1s,1s,1s,1s,1s,1s;
+margin: 0 auto;
+box-sizing: inherit;
 }
 
-#td1text{
 
-    transform:translate(0px,-20px);
-    opacity: 1;
+
+#td2{
+    transition: transform 2s;
+    border-radius: 10px;
+}
+
+#td2:hover{
+        transform:scale(1.2);
+        -ms-transform:scale(1.2);
+        -moz-transform:scale(1.2);
+        -webkit-transform:scale(1.2); 
+        -o-transform:scale(1.2); 
+    }
+
+
+
+#td3{
+    transition: transform 2s;
+    border-radius: 10px;
+
+}
+
+#td3:hover{
+
+        transform:translate(90px,0px);
+        -ms-transform:translate(90px,0px); // IE 9 
+        -moz-transform:translate(90px,0px); // Firefox 
+        -webkit-transform:translate(-0px,0px); // Safari and Chrome 
+        -o-transform:translate(90px,0px); // Opera
+    }
+    
+
+
+
+
+#td4{
+
+    transition: transform 2s;
+    border-radius: 10px;
+}
+
+#td4:hover{
+
+    overflow: hidden;
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg); // IE 9
+    -moz-transform: rotate(-10deg); // Firefox
+    -o-transform: rotate(-10deg); // Safari and Chrome
+    -ms-transform: rotate(-10deg); // Opera
+
 }
         
             
@@ -27,6 +85,7 @@
     width: 200px;
     height: 200px;
 }
+
 
 #kyle{
     width: 200px;
@@ -41,4 +100,10 @@
 #kenny{
     width: 200px;
     height: 200px;
+}
+
+
+
+.div-img .hidden{
+    overflow: hidden;
 }
