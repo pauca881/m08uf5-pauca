@@ -1,0 +1,22 @@
+div[class^='col-']{
+    border: 5px solid white;
+  }
+  .verde{
+    background-color: rgb(13, 243, 13);
+    height: 80px;
+  }
+  .rojo {
+    background-color: red;
+  }
+  .rosa{
+      background-color: pink;
+      height: 80px;
+  }
+  .naranja{
+      background-color: orange;
+      height: 80px;
+  }
+  .azul{
+      background-color: blue;
+      height: 80px;
+  }
