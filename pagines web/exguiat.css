@@ -1,0 +1,45 @@
+.titol{
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.prim{
+    color: yellow;
+    background-color: blue;
+    width: 30%;
+    float: left;
+    overflow: hidden;
+
+}
+
+.seg{
+    color: green;
+    background-color: red;
+    width: 70%;
+    float: right;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px)
+{
+
+.prim{
+
+    width: 100%;
+}
+
+.seg{
+    
+    width: 100%;
+    background-color: chartreuse;
+}
+
+h1{
+    font-size: 35px;
+}
+
+
+
+
+}
