@@ -1,0 +1,32 @@
+#title{
+    background-color: blue;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+#segtit{
+    background-color: white;
+    color: darkturquoise;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    border: solid black 1px;
+}
+
+#div2{
+    text-align: center;
+    border: solid black 1px;
+}
+
+h5{
+    color: black;
+    font-weight: 300;
+}
+
+p{
+    color: black;
+    font-weight: 100
+}
+
+
