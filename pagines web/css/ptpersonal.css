@@ -1,8 +1,16 @@
+@font-face {
+    font-family: gotica;
+    src: url(../media/gotica.ttf);
+}
+
+
+
 #entero{
     background-color: #78866b;
     width: 75%;
     display:block;
     margin:auto;
+   
 }
 
 #portada{
@@ -66,7 +74,72 @@ ul, ol {
     top:0px;
 }
 
-#text{
+#inici{
+    column-count: 3;
+  column-gap: 60px;
+  column-rule-width: 1px;
+  margin: 50px;
+  font-family: gotica;
+  color: yellow;
     
+}
+
+#foto1{
+    padding: 18px;
+}
+
+#foto3{
+    display:block;
+    margin:auto;
+}
+
+#infanteria{
+    margin: 50px;
+    font-family: gotica;
+    color: yellow
+
+}
+
+#inf{
+    display:block;
+    margin:auto;
+}
+
+#inf{
+    display:block;
+    margin:auto;
+}
+
+#inf1{
+    display:block;
+    margin:auto;
+    margin-top: 50px;
+}
+
+
+
+h3{
+    color: red;
+}
+
+.card-title{
+    color: black;
+}
+
+#car{
+    column-count: 3;
+
+
+}
+
+#artilleria{
+    margin: 50px;
+    font-family: gotica;
+    color: yellow
+
+}
+
+#art{
+    column-count: 3;
 }
 
