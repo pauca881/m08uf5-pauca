@@ -1,0 +1,27 @@
+#webcopia{
+    z-index: 10;
+	text-align: center;
+	position: fixed;
+	transform: rotate(45deg);
+	background-color: black;
+	color: white;
+	right:-39px;
+	margin-top: 30px;
+	width: 200px;
+
+}
+
+.añadida{
+    font-size: 100px;
+    color: yellow;
+
+}
+
+
+.añadida2{
+
+    font-size: 75px;
+    color: grey;
+
+    
+}
