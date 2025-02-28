@@ -41,6 +41,10 @@ public class AlbumCromosMVC {
             
             opcio = scanner.nextInt();
             
+            String cromo_defecte = "DescripcioSenseValor";
+            String tipus_defecte = "SININFORMAR";
+
+            
             switch (opcio) {
             case 0:
             	album.listarCromos();
@@ -53,9 +57,22 @@ public class AlbumCromosMVC {
 
                     System.out.print("Ingresa el nombre del cromo: ");
                     String nombreCromo = scanner.nextLine();
+                    
+                    if(nombreCromo.isEmpty()) {
+                    	
+                    	nombreCromo = cromo_defecte;
+                    	
+                    }
 
                     System.out.print("Ingresa el tipo de Brawler: ");
                     String tipo = scanner.nextLine();
+                    
+						if(tipo.isEmpty()) {
+						                    	
+							tipo = tipus_defecte;
+						                    	
+						}
+                    
                     TipoBrawler brawlerTipo = TipoBrawler.valueOf(tipo.toUpperCase());
                     
                     try {
