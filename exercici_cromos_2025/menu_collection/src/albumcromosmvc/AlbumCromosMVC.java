@@ -4,6 +4,7 @@ package albumcromosmvc;
 import java.util.Scanner;
 import Model.AlbumCromoDAO;
 import Model.Cromo;
+import Model.CromoNoExisteix;
 import Model.TipoBrawler;
 import Model.NumberOutofAlbum;
 
@@ -74,9 +75,22 @@ public class AlbumCromosMVC {
                     System.out.println("Que cromo quieres escoger?");
                     int numeroCromo = scanner.nextInt();
                     
-                    if (album.eliminarCromo(numeroCromo)){
-                        System.out.println("Cromo eliminat correctament");
-                    }                    
+                    try {
+                    	
+                    	if (album.eliminarCromo(numeroCromo)){
+                            System.out.println("Cromo" + numeroCromo + "eliminat correctament");
+                        }
+                    	
+                    }
+                    
+                    catch(CromoNoExisteix e){
+                    	
+                        System.out.println("Aquest cromo no existeix");
+
+                    	
+                    }
+                    
+                    
                     break;
                 case 3:
                     System.out.println("Has elegido la Opción 3.");

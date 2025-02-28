@@ -28,14 +28,34 @@ public class AlbumCromoDAO {
     	}
     	else {
     		
+            System.out.println("Cromos normals:");
     		for(Cromo cromo : album) {
     			System.out.println(cromo);
     			
     		}
     		
+    		 if(caixa_repes.isEmpty()) {
+    			 
+    	            System.out.println("No tens cromos repetis.");
+    			 
+    		 }
+    		 else {
+    			 
+    			 
+ 	            System.out.println("Cromos repetits:");
+    			 for(Cromo cromo_repe : caixa_repes) {
+    	     			System.out.println(cromo_repe);
+    	     			
+    	     		}
+    			 
+    		 }
+     		
+    		
     	}
     	
     }
+    
+    
     
     /**
      * Afegeix el cromo a la nostra col·lecció 
@@ -72,7 +92,7 @@ public class AlbumCromoDAO {
         
     }
     
-    public boolean eliminarCromo(int numero_cromo) {
+    public boolean eliminarCromo(int numero_cromo) throws CromoNoExisteix {
     	
     	  Iterator<Cromo> iterator = album.iterator();
     	  
@@ -83,7 +103,8 @@ public class AlbumCromoDAO {
     	            return true;
     	        }
     	    }
-    	    return false; 
+    	    
+    	    throw new CromoNoExisteix();
     	
     	
     }
