@@ -51,5 +51,21 @@ public class AlbumCromoDAO {
         return this.afegirCromo(afegir);
         
     }
+    
+    public boolean eliminarCromo(Cromo delete) {
+    	
+    	return album.remove(delete);
+    	
+    }
+    
+    //TODO
+    public void SustituirCromo(Cromo sustituir) {
+    	
+    	
+    }
+    
+    //TODO
+    //Només cambio si em fa falta 
+    public void CambiarPatio(Cromo earn, Cromo give) {}
 	
 }
