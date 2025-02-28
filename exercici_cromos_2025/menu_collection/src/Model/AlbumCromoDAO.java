@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class AlbumCromoDAO {
@@ -71,9 +72,19 @@ public class AlbumCromoDAO {
         
     }
     
-    public boolean eliminarCromo(Cromo delete) {
+    public boolean eliminarCromo(int numero_cromo) {
     	
-    	return album.remove(delete);
+    	  Iterator<Cromo> iterator = album.iterator();
+    	  
+    	    while (iterator.hasNext()) {
+    	        Cromo cromo = iterator.next();
+    	        if (cromo.getNum() == numero_cromo) {
+    	            iterator.remove(); 
+    	            return true;
+    	        }
+    	    }
+    	    return false; 
+    	
     	
     }
     

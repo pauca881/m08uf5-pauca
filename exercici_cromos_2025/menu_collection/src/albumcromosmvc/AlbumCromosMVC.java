@@ -34,7 +34,7 @@ public class AlbumCromosMVC {
             System.out.println("0. Listar cromos");
             System.out.println("1. Agregar cromo");
             System.out.println("2. Borrar Cromo");
-            System.out.println("3. Cambiar cromoss");
+            System.out.println("3. Cambiar cromos");
             System.out.println("4. Salir");
             System.out.print("Elige una opción (1-4): ");
             
@@ -71,7 +71,12 @@ public class AlbumCromosMVC {
                     break;
 
                 case 2:
-                    System.out.println("Has elegido la Opción 2.");
+                    System.out.println("Que cromo quieres escoger?");
+                    int numeroCromo = scanner.nextInt();
+                    
+                    if (album.eliminarCromo(numeroCromo)){
+                        System.out.println("Cromo eliminat correctament");
+                    }                    
                     break;
                 case 3:
                     System.out.println("Has elegido la Opción 3.");
