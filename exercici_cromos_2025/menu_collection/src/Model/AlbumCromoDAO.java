@@ -17,6 +17,25 @@ public class AlbumCromoDAO {
         
     }
     
+    
+    public void listarCromos() {
+    	
+    	if (album.isEmpty()) {
+    		
+            System.out.println("No hi ha cromos en la colecció.");
+
+    	}
+    	else {
+    		
+    		for(Cromo cromo : album) {
+    			System.out.println(cromo);
+    			
+    		}
+    		
+    	}
+    	
+    }
+    
     /**
      * Afegeix el cromo a la nostra col·lecció 
      * @param afegir Cromo que vull afegir al  album
