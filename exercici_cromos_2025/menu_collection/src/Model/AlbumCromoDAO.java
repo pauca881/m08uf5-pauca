@@ -8,14 +8,21 @@ public class AlbumCromoDAO {
 
     private List<Cromo> album;
     private List<Cromo> caixa_repes;
+    private List<Cromo> album_random;
+
     private final int NUM_MAX_COLECCION;
 
     public AlbumCromoDAO(int num) {
     	
         album = new ArrayList<>();
         caixa_repes = new ArrayList<>();
+        album_random = new ArrayList<>();
         this.NUM_MAX_COLECCION = num;
         
+        album_random.add(new Cromo(5, "Cromo5", TipoBrawler.EPICO));
+        album_random.add(new Cromo(6, "Cromo6", TipoBrawler.EPICO));
+        album_random.add(new Cromo(7, "Cromo7", TipoBrawler.EPICO));
+      
     }
     
     

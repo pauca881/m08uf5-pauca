@@ -9,6 +9,13 @@ import Model.TipoBrawler;
 import Model.NumberOutofAlbum;
 
 /**
+ * TODO
+ * Sistema canvi de cromos
+ * Descripcions mínim 3 caràcters
+ *
+ * */
+
+/**
  *
  * @author Pauk
  */
@@ -110,8 +117,13 @@ public class AlbumCromosMVC {
                     
                     break;
                 case 3:
-                    System.out.println("Has elegido la Opción 3.");
-                    break;
+                	album.listarCromos();
+                	
+                    System.out.println("Quin cromo vols canviar?");
+                    int cromo_a_cambiar = scanner.nextInt();  
+                    
+                    
+                    break;                    
                 case 4:
                     System.out.println("Saliendo del programa...");
                     break;
