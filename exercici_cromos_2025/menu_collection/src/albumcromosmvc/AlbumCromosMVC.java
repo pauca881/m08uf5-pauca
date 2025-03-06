@@ -12,7 +12,7 @@ import Model.NumberOutofAlbum;
  * TODO
  * Sistema canvi de cromos
  * Descripcions mínim 3 caràcters
- *
+ * Afegir característiques
  * */
 
 /**
