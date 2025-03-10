@@ -11,7 +11,7 @@ private List<VideoTiktok> videos;
         this.videos = new ArrayList<>();
     }
     
-    // Mètode privat que retorna l'ID màxim
+    // mètode privat ja que no ha de ser accessible desde fora
     private int retornarIdMaxim() {
         if (videos.isEmpty()) {
             return 1;
@@ -39,6 +39,7 @@ private List<VideoTiktok> videos;
         videos.add(nouVideo);
     }
     
+    //poso remove 0 ja que borrarà el primer ( posició )
     public boolean eliminarVideo() {
         if (!videos.isEmpty()) {
             videos.remove(0);
@@ -56,10 +57,9 @@ private List<VideoTiktok> videos;
             }
         }
         
-        // Ordenem per popularitat (likes) de més a menys
+        // aqui ordeno per popularitat (likes) de més a menys
         Collections.sort(videosUsuari, Collections.reverseOrder());
         
-        // Mostrem els vídeos utilitzant un for-each
         System.out.println("Vídeos de l'usuari " + usuari + " ordenats per popularitat (for-each):");
         for (VideoTiktok video : videosUsuari) {
             System.out.println(video);
@@ -77,11 +77,10 @@ private List<VideoTiktok> videos;
             }
         }
         
-        // Ordenem per títol
+        // ordeno utilitzant el comparator creat
         Collections.sort(videosUsuari, new TitolComparator());
         
-        // Mostrem els vídeos utilitzant un for clàssic amb get()
-        System.out.println("Vídeos de l'usuari " + usuari + " ordenats per títol (for clàssic):");
+        System.out.println("Vídeos de l'usuari " + usuari + " ordenats per títol:");
         for (int i = 0; i < videosUsuari.size(); i++) {
             System.out.println(videosUsuari.get(i));
         }
@@ -98,11 +97,9 @@ private List<VideoTiktok> videos;
             }
         }
         
-        // Ordenem per durada
         Collections.sort(videosUsuari, new DuradaComparator());
         
-        // Mostrem els vídeos utilitzant un Iterator
-        System.out.println("Vídeos de l'usuari " + usuari + " ordenats per durada (Iterator):");
+        System.out.println("Vídeos de l'usuari " + usuari + " ordenats per durada peero amb itiretator");
         Iterator<VideoTiktok> iterator = videosUsuari.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
@@ -111,23 +108,15 @@ private List<VideoTiktok> videos;
         return videosUsuari;
     }
     
-    /*
-     * Resposta: No té sentit programar un mètode que substitueixi un vídeo sencer per un altre,
-     * ja que a TikTok un cop pujat un vídeo, aquest té una identitat pròpia amb el seu ID,
-     * comptador de likes, comentaris, etc. Si es vol canviar un vídeo, normalment s'elimina
-     * l'anterior i se'n puja un de nou. El que sí que té sentit és modificar certs atributs
-     * com el títol o descripció.
-     */
     
     public boolean modificarVideo(VideoTiktok videoAModificar, String nouTitol) {
-        // A TikTok només es pot modificar el títol/descripció d'un vídeo un cop pujat
+        
+    	//només modifico el titol ja que es només el que em permet modificar ( es l'únic que té Set )
+    	
         for (VideoTiktok video : videos) {
-            if (video.equals(videoAModificar)) {
                 video.setTitol(nouTitol);
-                return true;
-            }
         }
-        return false;
+        return true;
     }
 }
 	

@@ -1,7 +1,5 @@
 package Model;
 
-import java.util.Objects;
-
 public class VideoTiktok implements Comparable<VideoTiktok> {
     private int id;
     private String usuari;
@@ -48,26 +46,15 @@ public class VideoTiktok implements Comparable<VideoTiktok> {
         return durada;
     }
     
+    
+    //aquest mètode serveix per comparar numero de likes d'un video i l'altre
     @Override
     public int compareTo(VideoTiktok altre) {
-        // Ordenació natural per nombre de likes (de menys a més)
         return Integer.compare(this.likes, altre.likes);
     }
     
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        VideoTiktok that = (VideoTiktok) o;
-        return Double.compare(that.durada, durada) == 0 &&
-                Objects.equals(usuari, that.usuari) &&
-                Objects.equals(titol, that.titol);
-    }
-    
-    @Override
-    public int hashCode() {
-        return Objects.hash(usuari, titol, durada);
-    }
+  
+  
     
     @Override
     public String toString() {
