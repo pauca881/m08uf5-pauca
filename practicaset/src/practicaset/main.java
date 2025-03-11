@@ -140,7 +140,28 @@ public class main {
              }
          }
          
+         //Interseccio per trobar valors iguals
+         //Amb el retainAll, guardo els items que son iguals tant a menors_edat com a persones_aprovades
+         Set<Persona> menors_edat_aprovats = new HashSet<>(menors_edat);
+         menors_edat_aprovats.retainAll(persones_aprovades);
          
+         Set<Persona> menors_edat_no_aprovats = new HashSet<>(menors_edat);
+         menors_edat_no_aprovats.retainAll(persones_suspeses);
+         
+         Set<Persona> majors_edat_no_aprovats = new HashSet<>(majors_edat);
+         majors_edat_no_aprovats.retainAll(persones_suspeses);
+         
+         //Cambiar aquest for depenen del array que vulguis veure
+         for(Persona persona : menors_edat_aprovats) {
+        	 
+             System.out.println("Menor edat aprovat: ");
+             System.out.println(persona);
+
+        	 
+         }
+
+         
+
          
     	
     	
