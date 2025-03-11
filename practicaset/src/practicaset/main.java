@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.Collections;
 
 public class main {
 
@@ -11,6 +12,7 @@ public class main {
     public static void main(String[] args) {
     	
     	
+    	//Hashset es com un array que permet no afegir elements repetits
     	 Set<String> nomsConjuntH = new HashSet<>();
          nomsConjuntH.add("Justin");
          nomsConjuntH.add("Jose Miguel");
@@ -20,8 +22,8 @@ public class main {
          System.out.println("HasShet: es un conjunt que no l'importa el ordre");
          System.out.println(nomsConjuntH);
          
+         //LinkedHashset es com el Hash, pero desa l'ordre d'inscripció
          Set<String> nomsConjuntLH = new LinkedHashSet<>();
-         //mostra per ordre d'inserció
          nomsConjuntLH.add("Harpreet");
          nomsConjuntLH.add("Jeremy");
          nomsConjuntLH.add("Elena");
@@ -29,11 +31,12 @@ public class main {
          nomsConjuntLH.add("Juan");
          
          
-         System.out.println("LinkedHashSet: es un conjunt que no l'importa el ordre");
+         System.out.println("LinkedHashSet: es un conjunt que si l'importa el ordre");
          System.out.println(nomsConjuntLH);
          
-         Set<String> nomsConjuntT = new TreeSet<>();
-         //Set<String> nomsConjuntT = new TreeSet<>(clase que implementi comparator);
+         //TreeSet ordena per ordre natural ( ordre alfabètic, no permet duplicats )
+         //Amb el comparator l'ordenarem com voldrem, en aquest cas, al revés amb Collections.reverseOrder
+         Set<String> nomsConjuntT = new TreeSet<>(Collections.reverseOrder());
          nomsConjuntT.add("Juan");
          nomsConjuntT.add("Wenfu");
          nomsConjuntT.add("Jordi Joan");
@@ -61,8 +64,8 @@ public class main {
          nomsConjuntT1.add("Miquel Angel");
          
          
-         
-         //Set<String> interseccion1 = nomsConjuntT;
+         //interseccion es una copia de nomsConjuntT
+         //retainAll fa que només quedin els elements iguals de nomsConjuntT i nomsConjuntLH
          Set<String> interseccion = new TreeSet<>(nomsConjuntT);
          
          
@@ -88,5 +91,7 @@ public class main {
     	
     	
     }
+    
+    
 	
 }
