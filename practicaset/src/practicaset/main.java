@@ -2,8 +2,13 @@ package practicaset;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
+
+import Model.Persona;
+
+import java.util.ArrayList;
 import java.util.Collections;
 
 public class main {
@@ -87,7 +92,56 @@ public class main {
          Set<String> union = new TreeSet<>(nomsConjuntT);
          union.addAll(nomsConjuntLH);
          System.out.println("A union B" + union);
+         
+         //EXERCICI SET
+         ArrayList<Persona> personas = new ArrayList<>();
+         Random random = new Random();
+         
+         for (int i = 0; i < 10; i++) {
+             int notaFinal = random.nextInt(10) + 1;  //nota aleatoria entre 1 y 10
+             int edad = random.nextInt(10) + 16;  //edad rnadom entre 16 y 25
+             personas.add(new Persona(notaFinal, edad));
+         }
+         
+         
+         //SET PERSONES APROVADES
+         Set<Persona> persones_aprovades = new HashSet<>();
+         
+         for (Persona persona : personas) {
+             if (persona.getNotaFinal() >= 5) {
+            	 persones_aprovades.add(persona);
+             }
+         }
+         
+         //SET PERSONES SUSPESES
+         Set<Persona> persones_suspeses = new HashSet<>();
 
+         for (Persona persona : personas) {
+             if (persona.getNotaFinal() < 5) {
+            	 persones_suspeses.add(persona);
+             }
+         }
+         
+         //SET PERSONES MENORS D'EDAT
+         Set<Persona> majors_edat = new HashSet<>();
+
+         for (Persona persona : personas) {
+             if (persona.getEdad() >= 18) {
+            	 majors_edat.add(persona);
+             }
+         }
+         
+         //SET PERSONES MAJORS D'EDAT
+         Set<Persona> menors_edat = new HashSet<>();
+
+         for (Persona persona : personas) {
+             if (persona.getEdad() < 18) {
+            	 menors_edat.add(persona);
+             }
+         }
+         
+         
+         
     	
     	
     }
