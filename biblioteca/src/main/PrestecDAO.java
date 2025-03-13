@@ -18,9 +18,9 @@ public class PrestecDAO {
 	//el set string es guardaràn els llibres
     private Map<Persona, Set<String>> prestamos = new HashMap<>();
     
-	private List<Llibre> llibres = new ArrayList<>();
-    private List<Persona> persones = new ArrayList<>();
-    private List<Préstec> prestecs = new ArrayList<>();
+	//private List<Llibre> llibres = new ArrayList<>();
+    //private List<Persona> persones = new ArrayList<>();
+    //private List<Préstec> prestecs = new ArrayList<>();
 
 	
     //aquest metode afegeix la persona sino existeix (putIfAsbsent)
@@ -50,9 +50,21 @@ public class PrestecDAO {
     	
     }
     
-    public void delete(Persona persona) {
+    public void delete(Persona persona, Llibre llibre) {
     	
-    	
+    	//amb això guardo un set dels llibres de prestamos
+        Set<String> llibresPrestats = prestamos.get(persona);
+        
+        //si no esta buit i conté el llibre exacte
+        if (llibresPrestats != null && llibresPrestats.contains(llibre.getNomLlibre())) {
+        	
+        	//docncs borro el llibre exacte
+        	llibresPrestats.remove(llibre.getNomLlibre());
+        }
+        	
+        	System.out.println( persona.getNomPersona() + " no té el llibre " + llibre.getNomLlibre() + " en préstec");
+        }
+
     	
     	
     }

@@ -55,7 +55,11 @@ public class main {
                 case 2:
                     System.out.println("Escriu el nom de la persona:");
                     String nom_a_esborrar = scanner.nextLine();
-                    esborrar(nom_a_esborrar);
+                    
+                    System.out.println("Escriu el llibre que vols tornar:");
+                    String llibre_a_esborrar = scanner.nextLine();
+                    
+                    esborrar(nom_a_esborrar, llibre_a_esborrar);
 
                     break;
                 case 3:
@@ -82,10 +86,13 @@ public class main {
     }
 
 
-	private static void esborrar(String nom_a_esborrar) {
+	private static void esborrar(String nom_a_esborrar, String llibre_a_esborrar) {
 
         Persona persona = new Persona(nom_a_esborrar);
-		prestecDAO.delete(persona);
+        Llibre llibre = new Llibre(llibre_a_esborrar);
+		prestecDAO.delete(persona, llibre);
+		
+		
 		
 	}
 
