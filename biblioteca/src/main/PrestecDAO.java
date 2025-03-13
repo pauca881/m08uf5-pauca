@@ -1,7 +1,11 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import model.Llibre;
 import model.Persona;
@@ -10,65 +14,38 @@ import model.Préstec;
 
 public class PrestecDAO {
 
-	
+	//map per associar cada persona amb els llibres prestats con los libros prestados
+	//el set string es guardaràn els llibres
+    private Map<Persona, Set<String>> prestamos = new HashMap<>();
+    
 	private List<Llibre> llibres = new ArrayList<>();
     private List<Persona> persones = new ArrayList<>();
     private List<Préstec> prestecs = new ArrayList<>();
 
 	
-    public void afegirLlibre(Llibre llibre) {
-        llibres.add(llibre);
+    //aquest metode afegeix la persona sino existeix (putIfAsbsent)
+    public void afegirPersona(Persona persona) {
+        prestamos.putIfAbsent(persona, new HashSet<>());
     }
     
-    public void afegirPersona(Persona persona) {
-    	persones.add(persona);
+    public void mostrar_prestecs() {
+    	
+    	
+    	
+    	
     }
     
     public void afegirPrestec(Persona persona, Llibre llibre) {
     	
-    	if(persones.contains(persona) && llibres.contains(llibre)) {
-    		
-    		Préstec prestec = new Préstec(persona, llibre);
-    		prestecs.add(prestec);
-            System.out.println("Nou prèstec afegit");
+    	//primer, si persona no existeix al hashmap, l'afegim
+        if (!prestamos.containsKey(persona)) {
+            afegirPersona(persona);  
+        }
+        
+        //associem el llibre a la persona	
+        prestamos.get(persona).add(llibre.getNomLlibre());
+        System.out.println("Préstec afegit: " + persona.getNomPersona() + " - " + llibre.getNomLlibre());
 
-    		
-    	}
-    	
-    	else if(persones.contains(persona) && !llibres.contains(llibre)) {
-    		
-    		
-    		llibres.add(llibre);
-    		Préstec prestec = new Préstec(persona, llibre);
-    		prestecs.add(prestec);
-            System.out.println("Nou prèstec afegit");
-
-    		
-    		
-    	}
-    	
-    		else if(!persones.contains(persona) && llibres.contains(llibre)) {
-    		
-    		persones.add(persona);
-    		Préstec prestec = new Préstec(persona, llibre);
-    		prestecs.add(prestec);
-            System.out.println("Nou prèstec afegit");
-
-    		
-    	}
-    		else {
-    			
-    			persones.add(persona);
-        		llibres.add(llibre);
-
-        		Préstec prestec = new Préstec(persona, llibre);
-        		prestecs.add(prestec);
-                System.out.println("Nou prèstec afegit");
-
-        		
-    			
-    		}
-    	
     	
     	
     }
