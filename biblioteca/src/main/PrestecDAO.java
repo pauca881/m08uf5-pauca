@@ -3,6 +3,7 @@ package main;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -26,13 +27,6 @@ public class PrestecDAO {
     //aquest metode afegeix la persona sino existeix (putIfAsbsent)
     public void afegirPersona(Persona persona) {
         prestamos.putIfAbsent(persona, new HashSet<>());
-    }
-    
-    public void mostrar_prestecs() {
-    	
-    	
-    	
-    	
     }
     
     public void afegirPrestec(Persona persona, Llibre llibre) {
@@ -64,10 +58,31 @@ public class PrestecDAO {
         	
         	System.out.println( persona.getNomPersona() + " no té el llibre " + llibre.getNomLlibre() + " en préstec");
         }
-
+    
+   
+    public void llistar() {
     	
+    	//Entry es una interfaç de java amb dos Valors entry<X, y> ( clau valor )
+    	
+    	//IMPORTANT
+		//bàsicament en el for diem -> Persona, Set<String> = prestamos(clave, valor)
+    	
+    	for (Map.Entry<Persona, Set<String>> entry : prestamos.entrySet()) {
+    		
+    		
+            Persona persona = entry.getKey();
+            Set<String> llibres = entry.getValue();
+            
+            //getKey es la clau del Map
+            //getValue es el valor de la clau del MAP
+            
+            System.out.println(persona.getNomPersona() + " té els següents llibres en préstec: " + llibres);
+            
+        }
     	
     }
 
-    
+    	
+    	
+       
 }

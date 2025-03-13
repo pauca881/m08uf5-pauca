@@ -15,6 +15,22 @@ public class main {
     public static void main(String[] args) {
     	
     	
+        Persona pau = new Persona("Pau");
+        Persona miquel = new Persona("Miquel");
+        
+        Llibre llibre1 = new Llibre("llibreAA");
+        Llibre llibre2 = new Llibre("llibreBB");
+        Llibre llibre3 = new Llibre("llibreCC");
+        Llibre llibre4 = new Llibre("llibreDD");
+
+        prestecDAO.afegirPersona(pau);
+        prestecDAO.afegirPersona(miquel);
+
+        prestecDAO.afegirPrestec(pau, llibre1);
+        prestecDAO.afegirPrestec(pau, llibre2);
+        prestecDAO.afegirPrestec(miquel, llibre3);
+
+        
     	mostrar_menu();
     	
     	
@@ -42,6 +58,9 @@ public class main {
             opcio = scanner.nextInt();
             
             switch (opcio) {
+            	case 0:
+            		System.out.println("adeuu");
+            		break;
                 case 1:
                     System.out.println("Escriu el nom de la persona: ");
                     String nom = scanner.nextLine();
@@ -63,8 +82,8 @@ public class main {
 
                     break;
                 case 3:
-                    System.out.println("Has seleccionat l'Opció 3.");
-                    break;
+                	prestecDAO.llistar();
+                	break;
                 case 4:
                     System.out.println("Has seleccionat l'Opció 4.");
                     break;
