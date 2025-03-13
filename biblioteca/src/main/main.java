@@ -2,12 +2,21 @@ package main;
 
 import java.util.Scanner;
 
+import model.Persona;
+import model.Llibre;
+
+
 public class main {
+	
+	static Scanner scanner = new Scanner(System.in);
+	static PrestecDAO prestecDAO = new PrestecDAO();
+
 	
     public static void main(String[] args) {
     	
     	
     	mostrar_menu();
+    	
     	
         
     }
@@ -16,9 +25,8 @@ public class main {
     public static void mostrar_menu() {
     	
     	
-        Scanner scanner = new Scanner(System.in);
 
-        
+
         	int opcio;
         
         do {
@@ -35,10 +43,20 @@ public class main {
             
             switch (opcio) {
                 case 1:
-                    System.out.println("Has seleccionat l'Opció 1.");
+                    System.out.println("Escriu el nom de la persona: ");
+                    String nom = scanner.nextLine();
+                    
+                    System.out.println("Escriu el llibre: ");
+                    String llibre = scanner.nextLine();
+                    
+                    add_prestec(nom, llibre);
+
                     break;
                 case 2:
-                    System.out.println("Has seleccionat l'Opció 2.");
+                    System.out.println("Escriu el nom de la persona:");
+                    String nom_a_esborrar = scanner.nextLine();
+                    esborrar(nom_a_esborrar);
+
                     break;
                 case 3:
                     System.out.println("Has seleccionat l'Opció 3.");
@@ -62,6 +80,25 @@ public class main {
         
     	
     }
+
+
+	private static void esborrar(String nom_a_esborrar) {
+
+        Persona persona = new Persona(nom_a_esborrar);
+		prestecDAO.delete(persona);
+		
+	}
+
+
+	private static void add_prestec(String nom, String llibre) {
+
+        Persona persona = new Persona(nom);
+        Llibre nou_llibre = new Llibre(llibre);
+
+        prestecDAO.afegirPrestec(persona, nou_llibre);
+
+		
+	}
 	
 
 }
