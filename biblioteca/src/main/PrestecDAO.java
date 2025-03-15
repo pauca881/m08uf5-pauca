@@ -101,8 +101,7 @@ public class PrestecDAO {
             for (Set<String> libros : prestamos.values()) {
             	totsElsLlibres.addAll(libros); 
             }
-            
-            
+            S
             
 
     		
