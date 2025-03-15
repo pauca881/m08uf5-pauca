@@ -14,6 +14,9 @@ public class main {
 	
     public static void main(String[] args) {
     	
+    	//TODO
+    	//Mostrar només llibres que només té aquella persona
+    	//Crear grups de lectura
     	
         Persona pau = new Persona("Pau");
         Persona miquel = new Persona("Miquel");
@@ -56,6 +59,7 @@ public class main {
             System.out.print("Tria una opció (1-5): ");
             
             opcio = scanner.nextInt();
+            scanner.nextLine();
             
             switch (opcio) {
             	case 0:
@@ -85,7 +89,10 @@ public class main {
                 	prestecDAO.llistar();
                 	break;
                 case 4:
-                    System.out.println("Has seleccionat l'Opció 4.");
+                    System.out.println("De quin usuari vols llistar els seus prèstecs?:");
+                    String persona_a_llistar = scanner.nextLine();
+                    
+                    llistar_per_usuari(persona_a_llistar);
                     break;
                 case 5:
                     System.out.println("Has seleccionat l'Opció 5.");
@@ -123,6 +130,14 @@ public class main {
 
         prestecDAO.afegirPrestec(persona, nou_llibre);
 
+		
+	}
+	
+	private static void llistar_per_usuari(String persona_a_llistar) {
+		
+        Persona persona = new Persona(persona_a_llistar);
+        prestecDAO.llistar_llibres_no_prestats_per_altres(persona);
+        
 		
 	}
 	

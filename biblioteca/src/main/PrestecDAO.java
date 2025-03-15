@@ -80,6 +80,51 @@ public class PrestecDAO {
             
         }
     	
+    	
+    
+    }
+    
+    //En un SET posem els llibres de la persona
+    //En un altre SET posem tots els llibres que no estàn agafats pel primer SET
+    //Després en un altre Set final, posem els llibres que del Primer SET que no están repetits en el segon set
+    public void llistar_llibres_no_prestats_per_altres(Persona persona) {
+    	
+    	//Primer, comprovem si la persona existeix al Map
+    	if(prestamos.containsKey(persona)) {
+    		
+    		//agafem els llibres(values de la key) prestats que tingui aquella persona
+    		Set<String> llibres = prestamos.get(persona);
+    		
+    		   		
+            Set<String> totsElsLlibres = new HashSet<>();
+            
+            for (Set<String> libros : prestamos.values()) {
+            	totsElsLlibres.addAll(libros); 
+            }
+            
+            
+            
+
+    		
+    		System.out.println(  persona.getNomPersona() + "té aquests llibres en prèstec: ");
+    		for(String llibre : llibres) {
+    			
+    			System.out.println(llibre);
+    			
+    		}}
+    		else {
+    			
+    			System.out.println(persona.getNomPersona() + " no té llibres en préstec");
+
+    			
+    		}
+    		
+    		
+    	
+    	
+    
+    	
+        	
     }
 
     	
