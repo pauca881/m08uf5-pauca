@@ -95,7 +95,7 @@ public class main {
                     llistar_per_usuari(persona_a_llistar);
                     break;
                 case 5:
-                    System.out.println("Has seleccionat l'Opció 5.");
+                    prestecDAO.llistar_grups_lectura();
                     break;
                 case 6:
                     System.out.println("Sortint del programa...");

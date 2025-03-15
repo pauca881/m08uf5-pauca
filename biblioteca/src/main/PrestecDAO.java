@@ -125,6 +125,25 @@ public class PrestecDAO {
     	
         	
     }
+    
+    public void llistar_grups_lectura() {
+    	
+        
+        
+    	for (Map.Entry<Persona, Set<String>> entry : prestamos.entrySet()) {
+    		
+            Persona persona = entry.getKey();
+            Set<String> llibre_prestat = entry.getValue();
+            
+            System.out.println("Persona: " + persona);
+            System.out.println("Llibre prestat: " + llibre_prestat);
+            System.out.println("-----");
+        }
+    	
+
+    	
+    	
+    }
 
     	
     	
