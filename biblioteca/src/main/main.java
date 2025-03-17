@@ -37,15 +37,13 @@ public class main {
         
     	mostrar_menu();
     	
-    	
         
     }
 
 	
     public static void mostrar_menu() {
     	
-    	
-
+    
 
         	int opcio;
         
