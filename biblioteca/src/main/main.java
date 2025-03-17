@@ -31,6 +31,7 @@ public class main {
 
         prestecDAO.afegirPrestec(pau, llibre1);
         prestecDAO.afegirPrestec(pau, llibre2);
+        prestecDAO.afegirPrestec(miquel, llibre1);
         prestecDAO.afegirPrestec(miquel, llibre3);
 
         

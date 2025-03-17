@@ -84,7 +84,9 @@ public class PrestecDAO {
     
     }
     
-    //En un SET posem els llibres de la persona
+
+
+	//En un SET posem els llibres de la persona
     //En un altre SET posem tots els llibres que no estàn agafats pel primer SET
     //Després en un altre Set final, posem els llibres que del Primer SET que no están repetits en el segon set
     public void llistar_llibres_no_prestats_per_altres(Persona persona) {
@@ -130,15 +132,33 @@ public class PrestecDAO {
     	
         
         
-    	for (Map.Entry<Persona, Set<String>> entry : prestamos.entrySet()) {
-    		
-            Persona persona = entry.getKey();
-            Set<String> llibre_prestat = entry.getValue();
-            
-            System.out.println("Persona: " + persona);
-            System.out.println("Llibre prestat: " + llibre_prestat);
-            System.out.println("-----");
-        }
+    	for (Map.Entry<Persona, Set<String>> entry1 : prestamos.entrySet()) {
+    	    Persona persona1 = entry1.getKey();
+    	    Set<String> llibres1 = entry1.getValue();
+
+    	    for (Map.Entry<Persona, Set<String>> entry2 : prestamos.entrySet()) {
+    	        Persona persona2 = entry2.getKey();
+    	        Set<String> llibres2 = entry2.getValue();
+
+    	        //si la persona no es la mateixa
+    	        if (!persona1.equals(persona2)) {
+
+
+    	        	Set<String> llibres_iguals = new HashSet<>(llibres1);
+    	        	llibres_iguals.retainAll(llibres2);
+    	        	//en aquest hashset guardem els llibres iguals
+    	        	
+    	            if (!llibres_iguals.isEmpty()) {
+    	                System.out.println("Las personas " + persona1 + " y " + persona2 + " tenen aquest llibr afí: " + llibres_iguals);
+    	            }
+    	            else {
+    	            	
+    	            	System.out.println("No es possible crear grups de lectura: No hi ha llibress afinss");
+    	            	
+    	            }
+    	        }
+    	    
+
     	
 
     	
@@ -146,6 +166,6 @@ public class PrestecDAO {
     }
 
     	
-    	
+    	}}
        
 }
