@@ -1,0 +1,4 @@
+MenuCollection -> Exceptions, Constant Enum, ArrayList
+PracticaSet -> HashSet, LinkedHashSet, treeSet
+Tiktok -> Comparator, Collections.sort, Iterator, List<Object>
+Biblioteca -> Map<Key, Value>, HashMap
