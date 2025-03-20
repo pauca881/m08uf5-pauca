@@ -2,3 +2,37 @@ MenuCollection -> Exceptions, Constant Enum, ArrayList
 PracticaSet -> HashSet, LinkedHashSet, treeSet
 Tiktok -> Comparator, Collections.sort, Iterator, List<Object>
 Biblioteca -> Map<Key, Value>, HashMap
+
+HashSet -> No estàn ordenats
+LinkedHashSet -> ordenats en el ordre que s'afegeixen
+TreeSet -> ordenats acord al ordre natural o s'ordena amb comparator, ordre alfabètic, no permet duplicats
+
+— MAP — 
+
+Map ->  private Map<Objecte, Set<String>> mapa= new HashMap<>();
+
+Crear Map:
+M’arriben aquests valors: 
+Persona persona, Llibre llibre
+
+//primer, si persona no existeix al hashmap, l'afegim
+       if (!prestamos.containsKey(persona)) {
+           afegirPersona(persona); 
+       }
+      
+       //associem el llibre a la persona	
+       prestamos.get(persona).add(llibre.getNomLlibre());
+
+Llistar Map:
+//Entry es una interfaç de java amb dos Valors entry<X, y> ( clau valor )
+//IMPORTANT
+//bàsicament en el for diem -> Persona, Set<String> = prestamos(clave, valor)
+    	
+    	for (Map.Entry<Persona, Set<String>> entry : prestamos.entrySet()) {   		
+            Persona persona = entry.getKey();
+            Set<String> llibres = entry.getValue();           
+            //getKey es la clau del Map
+            //getValue es el valor de la clau del MAP            
+            System.out.println(persona.getNomPersona() + " té els següents llibres en préstec: " + llibres);
+            
+        }
