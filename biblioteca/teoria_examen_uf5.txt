@@ -132,3 +132,59 @@ public class DuradaComparator implements Comparator<VideoTiktok> {
     }
 }
 
+— MENU —
+import java.util.Scanner;
+static Scanner scanner = new Scanner(System.in);
+static PrestecDAO prestecDAO = new PrestecDAO();
+
+mostrar_menu(); 
+int opcio; 
+do { 
+    System.out.println("***** Menú biblio *****"); 
+    System.out.println("1. Afegir préstec"); 
+    System.out.println("2. Eliminar préstec"); 
+    System.out.println("3. Mostra llibres amb préstec per usuari"); 
+    System.out.println("4. Llibres no prestats a altres usuaris"); 
+    System.out.println("5. Crear grups de lectura"); 
+    System.out.println("6. Sortir"); 
+    System.out.print("Tria una opció (1-5): "); 
+    opcio = scanner.nextInt(); 
+    scanner.nextLine(); 
+    switch (opcio) { 
+        case 0: 
+            System.out.println("adeuu"); 
+            break; 
+        case 1: 
+            System.out.println("Escriu el nom de la persona: "); 
+            String nom = scanner.nextLine(); 
+            System.out.println("Escriu el llibre: "); 
+            String llibre = scanner.nextLine(); 
+            add_prestec(nom, llibre); 
+            break; 
+        case 2: 
+            System.out.println("Escriu el nom de la persona:"); 
+            String nom_a_esborrar = scanner.nextLine(); 
+            System.out.println("Escriu el llibre que vols tornar:"); 
+            String llibre_a_esborrar = scanner.nextLine(); 
+            esborrar(nom_a_esborrar, llibre_a_esborrar); 
+            break; 
+        case 3: 
+            prestecDAO.llistar(); 
+            break; 
+        case 4: 
+            System.out.println("De quin usuari vols llistar els seus prèstecs?:"); 
+            String persona_a_llistar = scanner.nextLine(); 
+            llistar_per_usuari(persona_a_llistar); 
+            break; 
+        case 5: 
+            prestecDAO.llistar_grups_lectura(); 
+            break; 
+        case 6: 
+            System.out.println("Sortint del programa..."); 
+        default: 
+            System.out.println("Opció no vàlida. Prova una altra vegada."); 
+    } 
+    System.out.println(); 
+} while (opcio != 6);
+
+
