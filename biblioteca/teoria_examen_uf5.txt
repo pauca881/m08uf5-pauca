@@ -187,4 +187,25 @@ do {
     System.out.println(); 
 } while (opcio != 6);
 
+— EXCEPCIONS —
+
+public class NumIncorrectException extends Exception{		
+	public NumIncorrectException() {		
+        super("Numero cromo no vàlido, no puede ser negativo");
+}
+TipoBrawler brawlerTipo = TipoBrawler.valueOf(tipo.toUpperCase());                
+                    try {
+                        Cromo cromoNuevo = new Cromo(numCromo, nombreCromo, brawlerTipo);
+                        boolean agregado = album.afegirCromo(cromoNuevo);
+                        if (agregado) {
+                            System.out.println("Cromo agregado exitosamente.");
+                        } else {
+                            System.out.println("Este cromo ya existe, se ha añadido a la caja de repes.");
+                        }
+                    } catch (NumberOutofAlbum e) {
+                        System.out.println("El número del cromo excede el límite de la colección.");
+                    }
+                    break;
+
+
 
