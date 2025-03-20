@@ -79,3 +79,35 @@ package Model;
 public enum TipoBrawler {
     COMUNES,EPICO,MITICOS,LEGENDARIOS,SININFORMAR
 }
+
+OBJECTE AMB EXCEPCIONS
+
+public class Cromo {
+    private int num;
+    private String nom;
+    private TipoBrawler tipo;
+
+    public Cromo(int num, String nom, TipoBrawler tipo) {
+        this.num = num;
+        this.nom = nom;
+        this.tipo = tipo;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public TipoBrawler getTipo() {
+        return tipo;
+    }
+
+    public void setNum(int num) throws NumIncorrectException {
+        if (num>0)
+        {
+            this.num = num;
+        }
+        else 
+            throw new NumIncorrectException();
+    }
+}
+
