@@ -36,3 +36,33 @@ Llistar Map:
             System.out.println(persona.getNomPersona() + " té els següents llibres en préstec: " + llibres);
             
         }
+
+— SETS —
+
+Set<String> nomsConjuntH = new HashSet<>();
+nomsConjuntH.add("Justin");
+
+Set<String> nomsConjuntLH = new LinkedHashSet<>();
+
+Set<String> nomsConjuntT = new TreeSet<>(Collections.reverseOrder());
+System.out.println(nomsConjuntT + " size " + nomsConjuntT.size());
+if(nomsConjuntT.contains("Wenfu"))
+         {
+             System.out.println("Existeix wenfu al conjunt");
+         }
+
+//Recorrer ArrayList i HashSet en Iterator
+ ArrayList<Persona> personas = new ArrayList<>();
+         
+for (Persona persona : personas) {
+        if (persona.getNotaFinal() >= 5) {
+            persones_aprovades.add(persona);
+    }
+}
+
+Iterator<Persona> iterator = persones_aprovades.iterator();
+while (iterator.hasNext()) {
+    Persona persona = iterator.next();
+    System.out.println(persona);
+}
+
