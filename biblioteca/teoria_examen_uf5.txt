@@ -66,3 +66,16 @@ while (iterator.hasNext()) {
     System.out.println(persona);
 }
 
+— INTERSECCIÓ —
+A la interseccio només estaràn els conjunts de nomsConjuntsT i nomsConjuntLH
+
+Set<String> interseccion = new TreeSet<>(nomsConjuntT);
+interseccion.retainAll(nomsConjuntLH);
+System.out.println("elementos interseccion " + interseccion);
+
+— ENUM —
+package Model;
+
+public enum TipoBrawler {
+    COMUNES,EPICO,MITICOS,LEGENDARIOS,SININFORMAR
+}
