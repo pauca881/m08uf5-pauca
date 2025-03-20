@@ -111,3 +111,24 @@ public class Cromo {
     }
 }
 
+— COMPARATOR —
+
+import java.util.Comparator;
+import Model.VideoTiktok;
+
+COMPARAR TITOL:
+Mètode nadiu de java compareToIgnoreCase per comparar dos strings
+
+@Override
+    public int compare(VideoTiktok v1, VideoTiktok v2) {
+        return v1.getTitol().compareToIgnoreCase(v2.getTitol());
+    }
+
+compare compara doubles:
+public class DuradaComparator implements Comparator<VideoTiktok> {
+    @Override
+    public int compare(VideoTiktok v1, VideoTiktok v2) {
+        return Double.compare(v1.getDurada(), v2.getDurada());
+    }
+}
+
