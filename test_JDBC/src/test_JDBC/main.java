@@ -6,6 +6,13 @@ public class main {
 		
         /*
          * 
+         * Què no entenc?
+         * 
+         * Alhora d'afegir la llibreria/driver, a on s'ha d'afegir exactament?
+         * S'ha de crear un projecte normal? O un web project
+         * Afegir al NETBEANS:
+         * https://www.tutorialsfield.com/how-to-connect-mysql-database-in-java-using-netbeans/
+         * 
          * INSTALAR XAMPP I CONECTOR JDBC 
          
          CREATE DATABASE IF NOT EXISTS nom_usuari;
