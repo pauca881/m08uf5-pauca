@@ -12,6 +12,7 @@ public class main {
 		 CREATE USER 'nom_usuari'@'localhost' IDENTIFIED BY 'nom_usuari';
 		 GRANT ALL PRIVILEGES ON nom_usuari.* TO 'nom_usuari'@'localhost';
 		 FLUSH PRIVILEGES;
+		 added
 
          
          
