@@ -1,0 +1,211 @@
+MenuCollection -> Exceptions, Constant Enum, ArrayList
+PracticaSet -> HashSet, LinkedHashSet, treeSet
+Tiktok -> Comparator, Collections.sort, Iterator, List<Object>
+Biblioteca -> Map<Key, Value>, HashMap
+
+HashSet -> No estàn ordenats
+LinkedHashSet -> ordenats en el ordre que s'afegeixen
+TreeSet -> ordenats acord al ordre natural o s'ordena amb comparator, ordre alfabètic, no permet duplicats
+
+— MAP — 
+
+Map ->  private Map<Objecte, Set<String>> mapa= new HashMap<>();
+
+Crear Map:
+M’arriben aquests valors: 
+Persona persona, Llibre llibre
+
+//primer, si persona no existeix al hashmap, l'afegim
+       if (!prestamos.containsKey(persona)) {
+           afegirPersona(persona); 
+       }
+      
+       //associem el llibre a la persona	
+       prestamos.get(persona).add(llibre.getNomLlibre());
+
+Llistar Map:
+//Entry es una interfaç de java amb dos Valors entry<X, y> ( clau valor )
+//IMPORTANT
+//bàsicament en el for diem -> Persona, Set<String> = prestamos(clave, valor)
+    	
+    	for (Map.Entry<Persona, Set<String>> entry : prestamos.entrySet()) {   		
+            Persona persona = entry.getKey();
+            Set<String> llibres = entry.getValue();           
+            //getKey es la clau del Map
+            //getValue es el valor de la clau del MAP            
+            System.out.println(persona.getNomPersona() + " té els següents llibres en préstec: " + llibres);
+            
+        }
+
+— SETS —
+
+Set<String> nomsConjuntH = new HashSet<>();
+nomsConjuntH.add("Justin");
+
+Set<String> nomsConjuntLH = new LinkedHashSet<>();
+
+Set<String> nomsConjuntT = new TreeSet<>(Collections.reverseOrder());
+System.out.println(nomsConjuntT + " size " + nomsConjuntT.size());
+if(nomsConjuntT.contains("Wenfu"))
+         {
+             System.out.println("Existeix wenfu al conjunt");
+         }
+
+//Recorrer ArrayList i HashSet en Iterator
+ ArrayList<Persona> personas = new ArrayList<>();
+         
+for (Persona persona : personas) {
+        if (persona.getNotaFinal() >= 5) {
+            persones_aprovades.add(persona);
+    }
+}
+
+Iterator<Persona> iterator = persones_aprovades.iterator();
+while (iterator.hasNext()) {
+    Persona persona = iterator.next();
+    System.out.println(persona);
+}
+
+— INTERSECCIÓ —
+A la interseccio només estaràn els conjunts de nomsConjuntsT i nomsConjuntLH
+
+Set<String> interseccion = new TreeSet<>(nomsConjuntT);
+interseccion.retainAll(nomsConjuntLH);
+System.out.println("elementos interseccion " + interseccion);
+
+— ENUM —
+package Model;
+
+public enum TipoBrawler {
+    COMUNES,EPICO,MITICOS,LEGENDARIOS,SININFORMAR
+}
+
+OBJECTE AMB EXCEPCIONS
+
+public class Cromo {
+    private int num;
+    private String nom;
+    private TipoBrawler tipo;
+
+    public Cromo(int num, String nom, TipoBrawler tipo) {
+        this.num = num;
+        this.nom = nom;
+        this.tipo = tipo;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public TipoBrawler getTipo() {
+        return tipo;
+    }
+
+    public void setNum(int num) throws NumIncorrectException {
+        if (num>0)
+        {
+            this.num = num;
+        }
+        else 
+            throw new NumIncorrectException();
+    }
+}
+
+— COMPARATOR —
+
+import java.util.Comparator;
+import Model.VideoTiktok;
+
+COMPARAR TITOL:
+Mètode nadiu de java compareToIgnoreCase per comparar dos strings
+
+@Override
+    public int compare(VideoTiktok v1, VideoTiktok v2) {
+        return v1.getTitol().compareToIgnoreCase(v2.getTitol());
+    }
+
+compare compara doubles:
+public class DuradaComparator implements Comparator<VideoTiktok> {
+    @Override
+    public int compare(VideoTiktok v1, VideoTiktok v2) {
+        return Double.compare(v1.getDurada(), v2.getDurada());
+    }
+}
+
+— MENU —
+import java.util.Scanner;
+static Scanner scanner = new Scanner(System.in);
+static PrestecDAO prestecDAO = new PrestecDAO();
+
+mostrar_menu(); 
+int opcio; 
+do { 
+    System.out.println("***** Menú biblio *****"); 
+    System.out.println("1. Afegir préstec"); 
+    System.out.println("2. Eliminar préstec"); 
+    System.out.println("3. Mostra llibres amb préstec per usuari"); 
+    System.out.println("4. Llibres no prestats a altres usuaris"); 
+    System.out.println("5. Crear grups de lectura"); 
+    System.out.println("6. Sortir"); 
+    System.out.print("Tria una opció (1-5): "); 
+    opcio = scanner.nextInt(); 
+    scanner.nextLine(); 
+    switch (opcio) { 
+        case 0: 
+            System.out.println("adeuu"); 
+            break; 
+        case 1: 
+            System.out.println("Escriu el nom de la persona: "); 
+            String nom = scanner.nextLine(); 
+            System.out.println("Escriu el llibre: "); 
+            String llibre = scanner.nextLine(); 
+            add_prestec(nom, llibre); 
+            break; 
+        case 2: 
+            System.out.println("Escriu el nom de la persona:"); 
+            String nom_a_esborrar = scanner.nextLine(); 
+            System.out.println("Escriu el llibre que vols tornar:"); 
+            String llibre_a_esborrar = scanner.nextLine(); 
+            esborrar(nom_a_esborrar, llibre_a_esborrar); 
+            break; 
+        case 3: 
+            prestecDAO.llistar(); 
+            break; 
+        case 4: 
+            System.out.println("De quin usuari vols llistar els seus prèstecs?:"); 
+            String persona_a_llistar = scanner.nextLine(); 
+            llistar_per_usuari(persona_a_llistar); 
+            break; 
+        case 5: 
+            prestecDAO.llistar_grups_lectura(); 
+            break; 
+        case 6: 
+            System.out.println("Sortint del programa..."); 
+        default: 
+            System.out.println("Opció no vàlida. Prova una altra vegada."); 
+    } 
+    System.out.println(); 
+} while (opcio != 6);
+
+— EXCEPCIONS —
+
+public class NumIncorrectException extends Exception{		
+	public NumIncorrectException() {		
+        super("Numero cromo no vàlido, no puede ser negativo");
+}
+TipoBrawler brawlerTipo = TipoBrawler.valueOf(tipo.toUpperCase());                
+                    try {
+                        Cromo cromoNuevo = new Cromo(numCromo, nombreCromo, brawlerTipo);
+                        boolean agregado = album.afegirCromo(cromoNuevo);
+                        if (agregado) {
+                            System.out.println("Cromo agregado exitosamente.");
+                        } else {
+                            System.out.println("Este cromo ya existe, se ha añadido a la caja de repes.");
+                        }
+                    } catch (NumberOutofAlbum e) {
+                        System.out.println("El número del cromo excede el límite de la colección.");
+                    }
+                    break;
+
+
+
