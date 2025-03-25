@@ -26,3 +26,5 @@ Interface ConnectURL
 Interface StatementURL
 
 Interface Resultset
+
+https://campus.proven.cat/pluginfile.php/132481/mod_resource/content/2/ud13_AccesoBBDD.pdf
