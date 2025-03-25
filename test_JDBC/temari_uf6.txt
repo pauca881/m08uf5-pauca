@@ -1,0 +1,21 @@
+Crearem un usuari, una bbdd amb el mateix nom i dades de prova.
+
+Anar a http://localhost/phpmyadmin/
+Pestanya comptes d'usuari:
+Crear un usuari amb la mateixa contrasenya que l'usuari.
+Marcar el check de crear una bbdd amb el mateix nom.
+Marcar el check de donar-li tots els privilegis sobre la bbdd.
+Dades de prova:
+Anar a la pestanya SQL Crear una taula per countries amb id, autonumeric, nom i capital
+Amb mysql/maria db, un camp autonumeric es defineix id INT AUTO_INCREMENT PRIMARY KEY
+Els altres camps els haurieu de saber...
+Insertar 4/5 registres. (instruccions SQL que heu de coneixer), recordeu que al ser un camp autonumeric al insert aquest camp no es necessari informar-lo.
+ 
+Afegir el Connector JDBC per MariaDB
+Descarregar el driver JDBC per a MariaDB des de https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector/  
+
+Afegir la llibreria al projecte:
+
+Clic dret a Llibreries → Afegir arxiu JAR/Folder...
+
+Seleccionar el mariadb-java-client-x.x.x.jar descarregat.
