@@ -19,3 +19,10 @@ Afegir la llibreria al projecte:
 Clic dret a Llibreries → Afegir arxiu JAR/Folder...
 
 Seleccionar el mariadb-java-client-x.x.x.jar descarregat.
+
+
+Interface ConnectURL
+
+Interface StatementURL
+
+Interface Resultset
