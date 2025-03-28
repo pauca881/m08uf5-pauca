@@ -3,6 +3,10 @@ import java.util.*;
 
 import Model.VideoTiktok;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class VideoTiktokDAO {
 
 private List<VideoTiktok> videos;
@@ -37,6 +41,40 @@ private List<VideoTiktok> videos;
         int nouId = retornarIdMaxim();
         VideoTiktok nouVideo = new VideoTiktok(nouId, usuari, titol, likes, durada);
         videos.add(nouVideo);
+        
+        //part sql
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        
+        try {
+            conn = DbConnect.getConnection();
+
+            String sql = "INSERT INTO videos (id, usuari, titol, likes, durada) VALUES (?, ?, ?, ?, ?)";
+
+            // Crear el PreparedStatement
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, nouId);
+            pstmt.setString(2, usuari);
+            pstmt.setString(3, titol);
+            pstmt.setInt(4, likes);
+            pstmt.setDouble(5, durada);
+
+            // Ejecutar la inserción
+            pstmt.executeUpdate();
+
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        
     }
     
     //poso remove 0 ja que borrarà el primer ( posició )
