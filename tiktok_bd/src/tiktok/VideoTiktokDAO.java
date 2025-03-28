@@ -59,9 +59,13 @@ private List<VideoTiktok> videos;
             pstmt.setInt(4, likes);
             pstmt.setDouble(5, durada);
 
-            // Ejecutar la inserción
-            pstmt.executeUpdate();
+            int files_afectades = pstmt.executeUpdate();
 
+            if (files_afectades > 0) {
+                System.out.println("Els videos s'han afegit correctament");
+            } else {
+                System.out.println("No s'ha pogut insertar el video");
+            }
             
         } catch (SQLException e) {
             e.printStackTrace();
