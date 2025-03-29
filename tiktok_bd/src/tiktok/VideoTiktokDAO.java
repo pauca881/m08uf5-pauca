@@ -94,30 +94,32 @@ private List<VideoTiktok> videos;
     	
     	
     	
-    	    System.out.println("Executing: " + (new Exception()).getStackTrace()[0].getMethodName());
+    	 System.out.println("Executing: " + (new Exception()).getStackTrace()[0].getMethodName());
 
     	    if (!videos.isEmpty()) {
-    	        VideoTiktok videoAEliminar = videos.get(0); // Obtén el primer video
+    	        VideoTiktok videoAEliminar = videos.get(0); // Obtener el primer video
 
-    	        try (Connection conn = DbConnect.getConnection()) { // Obtener conexión a la base de datos
+    	        // Conexión SQL y PreparedStatement para eliminar el video
+    	        try (Connection conn = DbConnect.getConnection()) {
     	            if (conn != null) {
-    	                // Eliminar de la lista en memoria
-    	                videos.remove(0);
+    	                String sql = "DELETE FROM videos WHERE id = ?";  // Consulta para eliminar el video
+    	                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+    	                    pstmt.setInt(1, videoAEliminar.getTitol()); // Establecer el titol del video a eliminar
 
-    	                // Eliminar de la base de datos usando el ID del primer video
-    	                String query = String.format("DELETE FROM videos WHERE id = %d", videoAEliminar.getId());
-    	                try (Statement stmt = conn.createStatement()) {
-    	                    int numRowsAffected = stmt.executeUpdate(query);
-    	                    System.out.format("%d rows deleted\n", numRowsAffected);
-    	                    return numRowsAffected > 0; // Si se eliminó alguna fila, retornar true
+    	                    int rowsAffected = pstmt.executeUpdate();  // Ejecutar la eliminación
+    	                    System.out.format("%d rows deleted\n", rowsAffected);
+
+    	                    // Eliminar también del listado en memoria
+    	                    videos.remove(0);
+
+    	                    return rowsAffected > 0; // Si se eliminó alguna fila, retornamos true
     	                }
     	            }
-    	        } catch (SQLException ex) {
-    	            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+    	        } catch (SQLException e) {
+    	            e.printStackTrace();
     	        }
     	    }
-    	    return false; // Si la lista está vacía o no se eliminó nada
-    	
+    	    return false; // Si no se encontró video o no se eliminó nada
     	
     }
     
