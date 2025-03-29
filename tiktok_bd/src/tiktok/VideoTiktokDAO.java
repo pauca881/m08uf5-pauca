@@ -90,9 +90,7 @@ private List<VideoTiktok> videos;
           //  videos.remove(0);
           //  return true;
         //}
-        //return false;
-    	
-    	
+        //return false;  	
     	
     	 System.out.println("Executing: " + (new Exception()).getStackTrace()[0].getMethodName());
 
@@ -104,7 +102,7 @@ private List<VideoTiktok> videos;
     	            if (conn != null) {
     	                String sql = "DELETE FROM videos WHERE id = ?";  // Consulta para eliminar el video
     	                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-    	                    pstmt.setInt(1, videoAEliminar.getTitol()); // Establecer el titol del video a eliminar
+    	                    pstmt.setString(1, videoAEliminar.getTitol()); // Establecer el titol del video a eliminar
 
     	                    int rowsAffected = pstmt.executeUpdate();  // Ejecutar la eliminación
     	                    System.out.format("%d rows deleted\n", rowsAffected);
