@@ -84,11 +84,41 @@ private List<VideoTiktok> videos;
     //poso remove 0 ja que borrarà el primer ( posició )
     //todo borrar video
     public boolean eliminarVideo() {
-        if (!videos.isEmpty()) {
-            videos.remove(0);
-            return true;
-        }
-        return false;
+    	
+    	//mètode antic
+        //if (!videos.isEmpty()) {
+          //  videos.remove(0);
+          //  return true;
+        //}
+        //return false;
+    	
+    	
+    	
+    	    System.out.println("Executing: " + (new Exception()).getStackTrace()[0].getMethodName());
+
+    	    if (!videos.isEmpty()) {
+    	        VideoTiktok videoAEliminar = videos.get(0); // Obtén el primer video
+
+    	        try (Connection conn = DbConnect.getConnection()) { // Obtener conexión a la base de datos
+    	            if (conn != null) {
+    	                // Eliminar de la lista en memoria
+    	                videos.remove(0);
+
+    	                // Eliminar de la base de datos usando el ID del primer video
+    	                String query = String.format("DELETE FROM videos WHERE id = %d", videoAEliminar.getId());
+    	                try (Statement stmt = conn.createStatement()) {
+    	                    int numRowsAffected = stmt.executeUpdate(query);
+    	                    System.out.format("%d rows deleted\n", numRowsAffected);
+    	                    return numRowsAffected > 0; // Si se eliminó alguna fila, retornar true
+    	                }
+    	            }
+    	        } catch (SQLException ex) {
+    	            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+    	        }
+    	    }
+    	    return false; // Si la lista está vacía o no se eliminó nada
+    	
+    	
     }
     
     public List<VideoTiktok> llistarVideosUsuariPopulars(String usuari) {
