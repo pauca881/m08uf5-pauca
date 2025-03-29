@@ -82,6 +82,7 @@ private List<VideoTiktok> videos;
     }
     
     //poso remove 0 ja que borrarà el primer ( posició )
+    //todo borrar video
     public boolean eliminarVideo() {
         if (!videos.isEmpty()) {
             videos.remove(0);
