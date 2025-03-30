@@ -1,11 +1,17 @@
 package tiktok;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import Model.VideoTiktok;
 
 public class main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+    	
+    	
+//    	MÈTODES PENDENTS DE FER AMB SQL:
+//    	videosusuarispopulars
+//    	modificar
     	
     	   /*
          * Respon a la pregunta dins el codi, si estem treballant per l’aplicació TikTok, 
