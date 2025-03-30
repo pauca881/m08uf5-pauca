@@ -163,21 +163,26 @@ private List<VideoTiktok> videos;
     public List<VideoTiktok> llistarVideosDurada(String usuari) {
         List<VideoTiktok> videosUsuari = new ArrayList<>();
         
-        for (VideoTiktok video : videos) {
-            if (video.getUsuari().equals(usuari)) {
-                videosUsuari.add(video);
-            }
-        }
         
-        Collections.sort(videosUsuari, new DuradaComparator());
+        //mètode antic
+//        for (VideoTiktok video : videos) {
+//            if (video.getUsuari().equals(usuari)) {
+//                videosUsuari.add(video);
+//            }
+//        }
         
-        System.out.println("Vídeos de l'usuari " + usuari + " ordenats per durada peero amb itiretator");
-        Iterator<VideoTiktok> iterator = videosUsuari.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+//        Collections.sort(videosUsuari, new DuradaComparator());
+//        
+//        System.out.println("Vídeos de l'usuari " + usuari + " ordenats per durada peero amb itiretator");
+//        Iterator<VideoTiktok> iterator = videosUsuari.iterator();
+//        while (iterator.hasNext()) {
+//            System.out.println(iterator.next());
+//        }
+//        
+//        return videosUsuari;
         
-        return videosUsuari;
+        
+        
     }
     
     
