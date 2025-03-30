@@ -95,22 +95,21 @@ private List<VideoTiktok> videos;
     	 System.out.println("Executing: " + (new Exception()).getStackTrace()[0].getMethodName());
 
     	    if (!videos.isEmpty()) {
-    	        VideoTiktok videoAEliminar = videos.get(0); // Obtener el primer video
-
-    	        // Conexión SQL y PreparedStatement para eliminar el video
+    	        VideoTiktok videoAEliminar = videos.get(0); //aqui agafo el primer video
+    	        
     	        try (Connection conn = DbConnect.getConnection()) {
     	            if (conn != null) {
-    	                String sql = "DELETE FROM videos WHERE id = ?";  // Consulta para eliminar el video
+    	                String sql = "DELETE FROM videos WHERE titol = ?"; 
     	                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-    	                    pstmt.setString(1, videoAEliminar.getTitol()); // Establecer el titol del video a eliminar
+    	                    pstmt.setString(1, videoAEliminar.getTitol());
 
-    	                    int rowsAffected = pstmt.executeUpdate();  // Ejecutar la eliminación
-    	                    System.out.format("%d rows deleted\n", rowsAffected);
+    	                    int files_afectades = pstmt.executeUpdate(); 
+    	                    System.out.format("%d files esborrades\n", files_afectades);
 
-    	                    // Eliminar también del listado en memoria
+    	                    //també elimino el video de la llista normal
     	                    videos.remove(0);
 
-    	                    return rowsAffected > 0; // Si se eliminó alguna fila, retornamos true
+    	                    return files_afectades > 0; // si alguna fila s'ha eliminat, tornem true
     	                }
     	            }
     	        } catch (SQLException e) {
