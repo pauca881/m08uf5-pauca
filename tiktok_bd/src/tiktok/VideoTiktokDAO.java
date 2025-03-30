@@ -52,7 +52,6 @@ private List<VideoTiktok> videos;
 
             String sql = "INSERT INTO videos (id, usuari, titol, likes, durada) VALUES (?, ?, ?, ?, ?)";
 
-            // Crear el PreparedStatement
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, nouId);
             pstmt.setString(2, usuari);
@@ -161,7 +160,7 @@ private List<VideoTiktok> videos;
         return videosUsuari;
     }
     
-    public List<VideoTiktok> llistarVideosDurada(String usuari) {
+    public List<VideoTiktok> llistarVideosDurada(String usuari) throws SQLException {
         List<VideoTiktok> videosUsuari = new ArrayList<>();
         
         
@@ -195,12 +194,14 @@ private List<VideoTiktok> videos;
             
 
             while (resultSet.next()) {
-                VideoTiktok video = new VideoTiktok();
-                video.setId(resultSet.getInt("id"));
-                video.setUsuari(resultSet.getString("usuari"));
-                video.setDurada(resultSet.getInt("durada"));
-                video.setTitulo(resultSet.getString("titulo"));
-
+            	
+                int id = resultSet.getInt("id");
+                String user = resultSet.getString("usuari");
+                String titol = resultSet.getString("titol");
+                int likes = resultSet.getInt("likes");
+                double durada = resultSet.getDouble("durada");
+                
+                VideoTiktok video = new VideoTiktok(id, user, titol, likes, durada);
                 videosUsuari.add(video);
             }
         } catch (SQLException e) {
