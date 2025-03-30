@@ -5,6 +5,7 @@ import Model.VideoTiktok;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class VideoTiktokDAO {
@@ -180,6 +181,41 @@ private List<VideoTiktok> videos;
 //        }
 //        
 //        return videosUsuari;
+        
+        
+        Connection conn = null;
+        String sql = "SELECT * FROM videos WHERE usuari = ? ORDER BY durada";
+
+        try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+
+
+        	preparedStatement.setString(1, usuari);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            
+
+            while (resultSet.next()) {
+                VideoTiktok video = new VideoTiktok();
+                video.setId(resultSet.getInt("id"));
+                video.setUsuari(resultSet.getString("usuari"));
+                video.setDurada(resultSet.getInt("durada"));
+                video.setTitulo(resultSet.getString("titulo"));
+
+                videosUsuari.add(video);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            conn.close();
+        }
+
+        System.out.println("Vídeos de l'usuari " + usuari + " ordenats per durada");
+        for (VideoTiktok video : videosUsuari) {
+            System.out.println(video);
+        }
+
+        return videosUsuari;
+        
         
         
         
