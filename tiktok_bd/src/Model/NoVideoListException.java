@@ -1,5 +1,9 @@
 package Model;
 
-public class NoVideoListException {
+public class NoVideoListException extends Exception {
 
+    public NoVideoListException() {
+    super("No hay videos");
+  }
+	
 }
