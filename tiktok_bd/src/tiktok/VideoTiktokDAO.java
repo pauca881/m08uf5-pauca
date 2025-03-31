@@ -138,6 +138,28 @@ private List<VideoTiktok> videos;
         }
         
         return videosUsuari;
+        
+        //Mètode amb SQL
+//        List<VideoTikTok> lista = new ArrayList<>();
+//        
+//        String sql = "SELECT * FROM VIDEOS " + 
+//                "WHERE USUARI = ? ORDER BY LIKES DESC;";
+//        //obtenir una conexió a la bd amb el usuari y password
+//        conn = DBConnect.getConnection();
+//        PreparedStatement pstmt = conn.prepareStatement(sql);
+//        pstmt.setString(1, usuari);
+//        
+//        ResultSet rs  = pstmt.executeQuery();
+//        while (rs.next())
+//        {
+//            VideoTikTok vista = new VideoTikTok(rs.getString("usuari"), rs.getString("titol"), rs.getDouble("durada"));
+//            vista.setLikes(rs.getInt("likes"));
+//            lista.add(vista);
+//        }
+//        return lista;
+        
+        
+        
     }
     
     public List<VideoTiktok> llistarVideosUsuariTitol(String usuari) {
