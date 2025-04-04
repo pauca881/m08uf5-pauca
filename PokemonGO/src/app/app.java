@@ -1,8 +1,12 @@
 package app;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+import model.Entrenador;
+import model.EntrenadorDAO;
 import model.PokemonDAO;
 
 public class app {
@@ -10,13 +14,17 @@ public class app {
 	static Scanner scanner = new Scanner(System.in);
 	static ArrayList array = new ArrayList<>();
 
+    static EntrenadorDAO entrenadorDAO;
 
-	public static void main(String[] args) {
+
+	public static void main(String[] args) throws SQLException {
         
 		
 		//Carregar dades de prova
         PokemonDAO pokemonDAO = new PokemonDAO();
         pokemonDAO.carregar_dades_prova();
+
+        EntrenadorDAO entrenadorDAO = new EntrenadorDAO();
 
 		
 		
@@ -26,7 +34,7 @@ public class app {
 	}
 
 
-	private static void run() {
+	private static void run() throws SQLException {
 		
 		
 		
@@ -64,6 +72,7 @@ public class app {
 	                break;
 	            case 4:
 	                System.out.println("Listar Entrenadores");
+	                llistar_entrenadors();
 	                break;
 	            case 5:
 	                System.out.println("Dar de alta Pokemon");
@@ -85,6 +94,26 @@ public class app {
 	        
 	        scanner.close();  
 	    }
+
+
+	private static void llistar_entrenadors() throws SQLException {
+
+		
+		List<Entrenador> entrenadors_actuals = entrenadorDAO.LlistarEntrenadors();
+		
+	    if (entrenadors_actuals != null && !entrenadors_actuals.isEmpty()) {
+	    	
+	        for (Entrenador entrenador : entrenadors_actuals) {
+	            System.out.println("ID: " + entrenador.getId() + ", Nom: " + entrenador.getNombre() + ", Password: " + entrenador.getContrasena());
+	        }
+	    } else {
+
+	        System.out.println("No hi ha entrenadors a la bbdd");
+	    }
+		
+		
+		
+	}
 		
 	
 

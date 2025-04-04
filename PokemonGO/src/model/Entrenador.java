@@ -4,8 +4,8 @@ import java.util.Set;
 
 public class Entrenador {
 
-	 private int identificador;
-	    
+	 	private int id;
+	 	    
 	    private String nombre;
 	    
 	    private String contrasena;
@@ -19,12 +19,12 @@ public class Entrenador {
 	        this.contrasena = contrasena;
 	    }
 
-	    public int getIdentificador() {
-	        return identificador;
+	    public int getId() {
+	        return id;
 	    }
 
-	    public void setIdentificador(int identificador) {
-	        this.identificador = identificador;
+	    public void setId(int identificador) {
+	        this.id = identificador;
 	    }
 
 	    public String getNombre() {

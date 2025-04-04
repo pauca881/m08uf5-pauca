@@ -51,6 +51,7 @@ public class PokemonDAO {
         	
 		} catch (Exception e) {
 
+            e.printStackTrace();
 
 		} finally {
 			
