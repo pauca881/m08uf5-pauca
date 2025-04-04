@@ -3,6 +3,8 @@ package app;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import model.PokemonDAO;
+
 public class app {
 	
 	static Scanner scanner = new Scanner(System.in);
@@ -11,19 +13,23 @@ public class app {
 
 	public static void main(String[] args) {
         
+		
+		//Carregar dades de prova
+        PokemonDAO pokemonDAO = new PokemonDAO();
+        pokemonDAO.carregar_dades_prova();
+
+		
+		
 		run();
 		
 		
 	}
 
+
 	private static void run() {
-
-
-		show_menu();
 		
-	}
-
-	private static void show_menu() {
+		
+		
 
 
 	        int opcio;
@@ -84,3 +90,40 @@ public class app {
 
 	
 }
+
+//DADES SQL
+//
+//CREATE DATABASE entrenadors_pokemon;
+//USE entrenadors_pokemon;
+//
+
+// NOTA: el unique key es fa perque no es puguin posar entrenadors amb el mateix name
+// unique_name es el nom de la restricció
+
+//CREATE TABLE entrenadors (
+//	    id INT AUTO_INCREMENT PRIMARY KEY,
+//	    name VARCHAR(255) NOT NULL,
+//	    password VARCHAR(255) NOT NULL,
+//	    UNIQUE KEY unique_name (name)
+//	);
+
+//CREATE TABLE pokemon (
+//	    num_pokedex INT PRIMARY KEY,
+//	    name VARCHAR(255) NOT NULL,
+//	    type VARCHAR(255) NOT NULL,
+//	    UNIQUE KEY unique_pokedex (num_pokedex)
+//	);
+
+//TAULA pokemons capturats
+//CREATE TABLE pokemons_capturats (
+//	    id INT AUTO_INCREMENT PRIMARY KEY,
+//	    entrenador_id INT,
+//	    pokedex_number INT,
+//	    forca_combat INT DEFAULT NULL,
+//	    FOREIGN KEY (entrenador_id) REFERENCES entrenadors(id) ON DELETE CASCADE,
+//	    FOREIGN KEY (pokedex_number) REFERENCES pokemon(pokedex_number) ON DELETE CASCADE
+//	);
+
+
+
+
