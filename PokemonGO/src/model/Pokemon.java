@@ -39,4 +39,14 @@ public class Pokemon {
 	}
 
 	
+	@Override
+    public String toString() {
+        return "Pokemon{" +
+                "numero_pokedex=" + numero_pokedex +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
+	
+	
 }
