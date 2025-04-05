@@ -67,5 +67,12 @@ public class PokemonDAO {
 	}
 	
 	
+	public void AltaPokemon(){}
+	
+	public void getPokemonRandom(){}
+	public void getListPokemon(){}
+
+	
+	
 
 }
