@@ -15,7 +15,6 @@ public class EntrenadorDAO {
 	
 			//FASE 3
 			//ExisteixEntrenador ( donat el nom et diu les altres caracterisitques )
-			//esborrarEntrenador
 	
     public boolean AltaEntrenador(Entrenador entrenador) {
     	
@@ -142,6 +141,47 @@ public class EntrenadorDAO {
     	        return false;
     	    } 
     	}
+
+
+		public boolean login_entrenador(String user, String password) {
+			
+			
+		    Connection conn = null;
+		    PreparedStatement pstmt = null;
+		    ResultSet rs = null;
+		    
+		    try {
+				
+		        conn = DbConnect.getConnection();
+		        
+		        String sql = "SELECT * FROM entrenadors WHERE name = ? AND password = ?";
+
+		        pstmt = conn.prepareStatement(sql);
+		        pstmt.setString(1, user);  
+		        pstmt.setString(2, password);
+		        
+		        rs = pstmt.executeQuery();
+
+		        //el next retorn true o false, si hi ha dades amb aquesta consulta, es que l'usuari existeix
+		        // i per tant retorna true, sino retorna false
+		        return rs.next();
+
+		    	
+			} catch (Exception e) {
+
+
+		        System.err.println("Error a la base de dades: " + e.getMessage());
+		        e.printStackTrace();
+		        return false;		
+			
+			
+			}
+		   
+
+			
+			
+			
+		}
 
     	
     	

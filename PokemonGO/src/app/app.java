@@ -36,10 +36,13 @@ public class app {
 
 	private static void run() throws SQLException {
 		
+			
+			boolean login = login();
 		
-		
-
-
+			if(login) {
+				
+			
+			
 	        int opcio;
 
 	        do {
@@ -95,7 +98,36 @@ public class app {
 	        } while (opcio != 4);  
 	        
 	        scanner.close();  
+	        
+			}
+			else {
+				
+                System.out.println("Error, l'usuari no existex. Torni-ho a intentar");
+
+				
+				
+			}
+
+	        
 	    }
+			
+			
+
+
+	private static boolean login() {
+
+			
+	    System.out.print("Introdueix el teu usuari: ");
+	    String user = scanner.nextLine();
+	    
+	    System.out.print("Introdueix la teva contrasenya: ");
+	    String password = scanner.nextLine();
+	    
+	    boolean validat = entrenadorDAO.login_entrenador(user, password);
+		
+	    return validat;
+		
+	}
 
 
 	private static void borrar_entrenador() {
