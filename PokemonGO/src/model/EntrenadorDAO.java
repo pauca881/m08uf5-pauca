@@ -12,8 +12,8 @@ import DB.DbConnect;
 public class EntrenadorDAO {
 
 			//TO DO
-			//Lògica del AltaEntrenador al menu
 	
+			//FASE 3
 			//ExisteixEntrenador ( donat el nom et diu les altres caracterisitques )
 			//esborrarEntrenador
 	
@@ -115,6 +115,36 @@ public class EntrenadorDAO {
     		
     		
     	}
+    	
+    	
+    	
+    	public boolean EsborrarEntrenador(String nom) {
+    		
+    		
+    	    Connection conn = null;
+    	    PreparedStatement pstmtEntrenador = null;
+
+    	    try {
+    	        conn = DbConnect.getConnection();
+    	        
+    	        String sql = "DELETE FROM entrenadors WHERE name = ?";
+
+    	        pstmtEntrenador = conn.prepareStatement(sql);
+    	        pstmtEntrenador.setString(1, nom);
+    	        
+    	        int lineas_modificades = pstmtEntrenador.executeUpdate();
+    	        
+    	        return lineas_modificades > 0;
+
+    	    } catch (SQLException e) {
+    	        System.err.println("Error a la base de dades: " + e.getMessage());
+    	        e.printStackTrace();
+    	        return false;
+    	    } 
+    	}
+
+    	
+    	
 
     
     

@@ -63,9 +63,11 @@ public class app {
 	                break;
 	            case 1:
 	                System.out.println("Dar de alta entrenador");
+	                alta_entrenador();
 	                break;
 	            case 2:
 	                System.out.println("Dar de baja entrenador");
+	                borrar_entrenador();
 	                break;
 	            case 3:
 	                System.out.println("Consultar Datos Entrenador");
@@ -94,6 +96,59 @@ public class app {
 	        
 	        scanner.close();  
 	    }
+
+
+	private static void borrar_entrenador() {
+
+		
+        System.out.print("Introdueix el nom de l'entrenador que vols donar de baixa: ");
+        String nombre = scanner.nextLine();
+        
+        
+        boolean entrenador_esborrat = entrenadorDAO.EsborrarEntrenador(nombre);
+        
+        if(entrenador_esborrat) {
+            System.out.print("L'entrenador " + nombre + " s'ha esborrat perfecte") ;
+
+        	
+        }else {
+            System.out.print("L'entrenador " + nombre + " no s'ha esborrat. Comprova que existeixi. ") ;
+        	
+        }
+       
+		
+		
+	}
+
+
+	private static void alta_entrenador() {
+
+        System.out.print("Introdueix el nom de l'entrenador: ");
+        String nombre = scanner.nextLine();
+
+        System.out.print("Introdueix la contrasenya de l'entrenador: ");
+        String contrasena = scanner.nextLine();
+
+        Entrenador entrenador = new Entrenador(nombre, contrasena);
+
+        boolean entrenador_creat = entrenadorDAO.AltaEntrenador(entrenador);
+		
+        if(entrenador_creat) {
+        	
+            System.out.print("El entrenador s'ha creat correctament: ");
+
+        	
+        }else {
+        	
+            System.out.print("No s'ha pogut donar d'alta l'entrenador: ");
+
+        	
+        	
+        }
+
+		
+		
+	}
 
 
 	private static void llistar_entrenadors() throws SQLException {
