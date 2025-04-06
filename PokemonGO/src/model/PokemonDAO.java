@@ -4,6 +4,7 @@ import model.Pokemon;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Random;
 
 import DB.DbConnect;
 
@@ -115,8 +116,103 @@ public class PokemonDAO {
 		
 	}
 	
-	public void getPokemonRandom(){}
-	public void getListPokemon(){}
+	public void getPokemonRandom(){
+
+		//Creació numero random
+		Random random = new Random();
+		int numero_random = random.nextInt(10);
+
+		   // Connexió
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+	    ResultSet result_set = null;
+	    
+	    try {
+	        conn = DbConnect.getConnection();
+	        String sql = "SELECT * FROM pokemon WHERE num_pokedex = ?";
+	        pstmt = conn.prepareStatement(sql);
+	
+	        pstmt.setInt(1, numero_random);
+	        result_set = pstmt.executeQuery();
+	
+	        if(result_set.next()) {
+	            String name = result_set.getString("name");
+	            String type = result_set.getString("type");
+	            int numPokedex = result_set.getInt("num_pokedex");
+	            System.out.println("El pokemon aleatori es: " + name + " amb tipus " + type + " amb el numero de pokedex " + numPokedex);
+	        } else {
+	            System.out.println("No hi ha cap pokemon amb el mateix id que el numero generat");
+	        }
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+		
+
+		
+	}
+
+	
+	public void getListPokemon() throws SQLException {
+
+
+
+		Connection conn = null;
+            PreparedStatement pstmt = null;
+            ResultSet result_set = null;
+            
+            List<Pokemon> pokemons = new ArrayList<>();
+            
+            
+            try {
+				
+                conn = DbConnect.getConnection();
+                String sql = "SELECT * FROM pokemon";
+                pstmt = conn.prepareStatement(sql);
+
+                result_set = pstmt.executeQuery();
+
+                while (result_set.next()) {
+                    Pokemon pokemon = new Pokemon();
+		pokemon.setNumero_pokedex(result_set.getInt("numero_pokedex"));
+                pokemon.setName(result_set.getString("name"));
+                pokemon.setType(result_set.getString("type"));
+
+                    
+                    pokemons.add(pokemon);
+                }
+                
+                return pokemons;
+                
+            	
+			} catch (Exception e) {
+
+				System.err.println("Error a la base de dades: " + e.getMessage());
+	            e.printStackTrace();
+	            return null; 
+
+			
+			} finally {
+				
+				
+				result_set.close();
+
+				pstmt.close();
+
+				conn.close();
+				
+				
+			}
+            
+
+
+
+			
+
+
+
+		
+	}
 
 	
 	
