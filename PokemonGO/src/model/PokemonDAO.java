@@ -1,5 +1,6 @@
 package model;
 
+import model.Pokemon;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -67,7 +68,52 @@ public class PokemonDAO {
 	}
 	
 	
-	public void AltaPokemon(){}
+	public boolean AltaPokemon(Pokemon pokemon){
+		
+		
+		 Connection conn = null;
+	        PreparedStatement pstmtPokemon = null;
+	    	
+
+	        
+	        try {
+	        	
+	            conn = DbConnect.getConnection();
+	            
+	            String sql = "INSERT INTO pokemon (name, type) VALUES (?, ?)";
+
+	            //NOTA: No fico la numero_pokedex perque ho he ficat al sql perque sigui id autoincremental
+	            
+	            pstmtPokemon = conn.prepareStatement(sql);
+	            pstmtPokemon.setString(1, pokemon.getName());
+	            pstmtPokemon.setString(2, pokemon.getType());
+	            pstmtPokemon.executeUpdate();
+
+	            int lineas_modificades = pstmtPokemon.executeUpdate();
+	            
+	            return lineas_modificades > 0;
+	            
+				
+			} catch (SQLException  e) {
+
+		        // com hem ficat la restricció al sql no cal fer-la aquí, només cal ficar-ho dins dels catches
+		        if (e.getMessage().contains("unique_pokemon_name")) {
+		            System.out.println("El Pokemon ja existeix amb aquesta nom.");
+		            return false;  
+		        }
+
+
+		        System.err.println("Error a la base de dades: " + e.getMessage());
+		        e.printStackTrace();
+		        return false;
+				
+
+			}    
+		
+		
+		
+		
+	}
 	
 	public void getPokemonRandom(){}
 	public void getListPokemon(){}

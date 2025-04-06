@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import model.Entrenador;
 import model.EntrenadorDAO;
+import model.Pokemon;
 import model.PokemonDAO;
 
 public class app {
@@ -15,6 +16,7 @@ public class app {
 	static ArrayList array = new ArrayList<>();
 
     static EntrenadorDAO entrenadorDAO;
+    static PokemonDAO pokemonDAO;
 
 
 	public static void main(String[] args) throws SQLException {
@@ -81,6 +83,7 @@ public class app {
 	                break;
 	            case 5:
 	                System.out.println("Dar de alta Pokemon");
+	            	crear_pokemon();
 	                break;
 	            case 6:
 	                System.out.println("Cazar pokemon");
@@ -112,6 +115,41 @@ public class app {
 	    }
 			
 			
+
+
+	private static void crear_pokemon() {
+
+		
+		System.out.print("Introdueix el número de la Pokédex: ");
+        int numeroPokedex = scanner.nextInt();
+        //salt de línia
+        scanner.nextLine(); 
+
+        System.out.print("Introdueix el nom del Pokémon: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Introdueix el tipus del Pokémon: ");
+        String type = scanner.nextLine();
+        
+        Pokemon pokemon = new Pokemon(numeroPokedex, name, type);
+
+        boolean pokemon_creat = pokemonDAO.AltaPokemon(pokemon);
+		
+        if(pokemon_creat) {
+        	
+            System.out.print("El pokemon s'ha creat correctament: ");
+
+        }else {
+        	
+            System.out.print("No s'ha pogut donar crear el Pokemon: ");
+
+        	
+        	
+        }
+		
+		
+		
+	}
 
 
 	private static boolean login() {
@@ -224,10 +262,10 @@ public class app {
 //	);
 
 //CREATE TABLE pokemon (
-//	    num_pokedex INT PRIMARY KEY,
+//	    num_pokedex INT AUTO_INCREMENT PRIMARY KEY,
 //	    name VARCHAR(255) NOT NULL,
 //	    type VARCHAR(255) NOT NULL,
-//	    UNIQUE KEY unique_pokedex (num_pokedex)
+//	    UNIQUE KEY unique_pokemon_name (name)
 //	);
 
 //TAULA pokemons capturats
