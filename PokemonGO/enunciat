@@ -57,5 +57,18 @@ Si no existeix, ho donarà d'alta, amb el password introduït, i dirà Benvingut
 Si existeix i el password és incorrecte informarà i acabarà el programa
 Si existeix i el password correcte, informarà que és correcte i anirà al menú. (0,75 pt)
 
+FASE 5a Alta i baixa (a/b/c/d)
+
+Realitzar l'opció 1 del menú
+Demanar dades d'entrenador i donar-lo d'alta, si el nom ja existeix ha d’avisar amb una exception i ha d’avisar
+Realitzar opció 2 del menú
+Demanar nom d'entrenador i si existeix esborrar-ho.
+Realitzar opció 3 del menú
+Consultar dades d’entrenador
+Realitzar opció 4 del menú
+Llistar els noms dels entrenadors existents.  
+
+
+
 
 
