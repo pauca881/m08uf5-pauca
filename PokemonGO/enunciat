@@ -49,4 +49,13 @@ Amb els mètodes següents.
 -totsEntrenadors(), retornarà una llista amb tots els entrenadors.
 -tancarConexió(), tanca la conexió oberta, mètode que s’ha de cridar quant és tanqui el programa, al sortir i a tots els catch del main també estaria bé cridar-lo per no deixar la conexió oberta.
 
+FASE 4 
+
+Després de la carátula i abans del menú, et demanarà que t'identifiquis, demana user i password.
+El programa ha de comprovar si existeix:
+Si no existeix, ho donarà d'alta, amb el password introduït, i dirà Benvingut “nom” i posarà el menú
+Si existeix i el password és incorrecte informarà i acabarà el programa
+Si existeix i el password correcte, informarà que és correcte i anirà al menú. (0,75 pt)
+
+
 
