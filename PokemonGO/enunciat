@@ -68,6 +68,26 @@ Consultar dades d’entrenador
 Realitzar opció 4 del menú
 Llistar els noms dels entrenadors existents.  
 
+FASE 5b Pokemon
+
+1. Crear la classe Pokemon:
+ Primer, crea la classe Pokemon amb els atributs que hi ha a la base de dades. Afegeix els mètodes setters i getters per poder accedir i modificar aquests atributs. També implementa el mètode toString(), que permetrà mostrar la informació completa del Pokémon de manera fàcil i llegible. A més, crea un o més constructor que permeti inicialitzar un objecte Pokemon amb tots els atributs. Aquí hi ha d’haver atributs per poder fer una conexió a base de dades i en el moment del constructor, fer la connexió i deixar-la oberta (i utilitzar-la aquesta conexió per tots els mètodes, no tancar-la)
+Crear un DAO per accedir a la base de dades:
+ Crea un objecte DAO (Data Access Object) per poder interactuar amb la base de dades. Implementa els següents mètodes:
+
+
+AltaPokemon(Pokemon nuevo): Aquest mètode s'encarregarà d'inserir un nou Pokémon a la base de dades, sempre que no existeixi un Pokémon amb els mateixos atributs.
+getPokemonRandom(): Aquest mètode ha de retornar un objecte Pokemon aleatori entre tots els Pokémon existents a la base de dades, amb tots els seus atributs complets, segons la taula de la base de dades.
+getListPokemon(): Aquest mètode retornarà una llista (List) amb tots els Pokémon existents a la base de dades.
+Implementar l'opció 5 del menú:
+ Implementa l'opció 5 del menú, que cridarà al mètode getPokemonRandom() per obtenir un Pokémon aleatori. Quan el jugador selecciona l'opció de captura, el sistema ha de mostrar les característiques d'aquest Pokémon aleatori per pantalla.
+Implementar l'opció 8 del menú:
+ Implementa l'opció 8 del menú, que cridarà al mètode getListPokemon() per mostrar una llista amb tots els Pokémon registrats a la base de dades. Recorda que tots els llistats han de mostrar el número total de registres que es mostren en la llista.
+D'aquesta manera, els usuaris podran veure els Pokémon disponibles i realitzar accions amb ells de manera interactiva, com la captura o consultar tots els Pokémon que hi ha a la base de dades.
+-tancarConexió(), tanca la conexió oberta, mètode que s’ha de cridar quant és tanqui el programa, al sortir i a tots els catch del main també estaria bé cridar-lo per no deixar la conexió oberta.
+
+
+
 
 
 
