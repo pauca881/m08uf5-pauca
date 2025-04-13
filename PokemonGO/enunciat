@@ -86,6 +86,12 @@ Implementar l'opció 8 del menú:
 D'aquesta manera, els usuaris podran veure els Pokémon disponibles i realitzar accions amb ells de manera interactiva, com la captura o consultar tots els Pokémon que hi ha a la base de dades.
 -tancarConexió(), tanca la conexió oberta, mètode que s’ha de cridar quant és tanqui el programa, al sortir i a tots els catch del main també estaria bé cridar-lo per no deixar la conexió oberta.
 
+FASE 5c Mostrar Pokémon que ha sortit
+
+En aquesta fase, mostrarem de manera gràfica el Pokémon que ens ha sortit.
+D’aquesta web on han creat diferents pokémons, en mode ascii descarregueu mínim 7 pokemons, si pot ser alguns que estiguin a la teva base de dades, i guarda'ls en diferents fitxers, que es diguin igual que el pokémon, amb extension .pok.
+Un cop fet això, quan donem a l'opció 5, i ens torna el Pokémon d'aleatori, agafarem el nom del Pokémon i obrirem el fitxer, amb el mateix nom i extensió Pok. Per fer això crearem una classe similar a la de la Caratula, però que es digui FicherosPokemon, i obriu tot l'arxiu, el carregueu en una List de String i el torneu. Si no existeix aquest fitxer, que carregueu, un Pokémon per defecte, crea un fitxer default.pok, amb algun Pokémon rar i que obri aquest.
+Després es mostri per pantalla (1,25)
 
 
 
