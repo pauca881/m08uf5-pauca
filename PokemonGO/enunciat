@@ -29,4 +29,13 @@ Un cop fet això ha de sortir un menú amb les opcions següents:
 8.-Listar tipos Pokemon existentes en juego.
 Amb el 0 s'ha de sortir , i si dones a les altres opcions ara com ara només ha de sortir una frase dient “Aquestes a l'opció …” on sigui el text de l'opció escollida.
 
+FASE 2 DISSENY DE BASE DE DADES
+
+El joc consistirà en diferents entrenadors que van capturant diferents pokémons (poden ser pokémons repetits)
+Crea una base de dades, a mysql per poder guardar entrenadors pokémon (nom i password, a més d'un id autoincremental, fixar-se en base dades països creada a classe). Encara que l'id és el camp clau, també heu de definir la taula perquè no es puguin donar d'alta entrenadors amb el mateix nom i en cas d’insertarlo doni error (Pista: Index bd)
+A la base de dades s'haurà de guardar Pokémon on es guardarà el seu número de Pokedex, nom Pokémon, tipus (només un tipus encara que sigui de més). No s'ha de poder donar d'alta pokémon amb el mateix número. El número no es autoincremental.
+També hi ha d'haver una taula per poder anar guardant els Pokémons capturats, els Pokémons capturats es poden repetir però en cada captura, la força de combat del Pokémon, pot ser diferent (no és obligatori que sigui diferent).
+Realitza alta d'alguns entrenadors i 4-5 Pokémons. i una captura per provar
+Per fer tot això, realitza un script similar al donat a classe a l'exemple de països (Wiki)  Us podeu ajudar del chatgpt, però per petites coses, amb el script de paisos, podrieu fer-ho quasi tot el que us demano.
+
 
