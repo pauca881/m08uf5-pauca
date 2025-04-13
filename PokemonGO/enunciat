@@ -1,1 +1,13 @@
+Programarem el popular Pokémon go, versió cutre-Java ;). Per als qui no sàpiguen de què va, és un joc on apareixen diferents pokémon que s'intenten capturar llençant una pokeball. Quan el captures s'afegeix a la teva motxilla, on se t'acumulen els pokémons.
+En la nostra versió el joc serà de la següent manera:
+T’identificaras com usuari, si no has jugat mai et demanaran el password i et donarà d’alta, i si has jugat el password te que ser correcte.
+Et sortiran pokemons amb diferents nivells de força, i els capturaras si encertes el seu número que  dependra de la força
+Podràs veure quants pokémons tens a la teva motxilla
+El joc real és molt més complex però sol farem aquestes funcionalitats.
+MOLT IMPORTANT: EN SER UN PROGRAMA AMB MOLT CODI, ÉS MOLT IMPORTANT LA PROGRAMACIÓ MODULAR I PENSAR BÉ LA FUNCIONALITAT DE CADA FUNCIÓ.
+EL MAIN HA DE SER SIMPLE, I A PARTIR D’ALLÍ S’HA DE FER MOLTES FUNCIONS. Teniu que respectar almenys la part de MODEL, encara que estaria bé que fessim la vista separada NO SERA OBLIGATORI.
+El nostre programa només començar ha de mostrar una carátula del joc, agafar la primera imatge de asciiart.eu, la guardarem a un fitxer que anomenarem logo.pok, NO amb extensió txt. 
+
+A partir d’alli, podras donar de alta/baixa entrenador.
+Els pokémons trobats es guardaran relacionats amb el entrenador que els ha capturat.
 
