@@ -11,3 +11,22 @@ El nostre programa només començar ha de mostrar una carátula del joc, agafar 
 A partir d’alli, podras donar de alta/baixa entrenador.
 Els pokémons trobats es guardaran relacionats amb el entrenador que els ha capturat.
 
+
+FASE 1
+
+A la primera fase només executar el programa es mostrarà la caràtula.
+Realment el que mostrareu és el contingut del fitxer(logo.pok). Per aquesta part crearem un objecte FitxerCaratula que tingui la ruta del fitxer en atributs i ha de tenir un mètode per carregar totes les línies a un arrayList de String (CargarCaratula) (5%). Basat amb els que hem fet a classe per llegir linea a linea, però ho ha de llegir tot, encara que hi ha diferents, el nom del fitxer sempre és el mateix.
+Al main és recollirà aquest arrayList i es mostrarà a la pantalla.
+Un cop fet això ha de sortir un menú amb les opcions següents:
+0.- Salir
+1.- Dar de alta entrenador
+2.- Dar de baja entrenador
+3.-Consultar Datos Entrenador
+4.-Listar Entrenadores
+5.-Dar de alta Pokemon
+6.-Cazar pokemon
+7.-Listar Pokemons cazados.
+8.-Listar tipos Pokemon existentes en juego.
+Amb el 0 s'ha de sortir , i si dones a les altres opcions ara com ara només ha de sortir una frase dient “Aquestes a l'opció …” on sigui el text de l'opció escollida.
+
+
