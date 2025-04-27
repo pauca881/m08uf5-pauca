@@ -9,5 +9,13 @@ import java.awt.event.ActionListener;
 public class Conversor extends JFrame {
 
 	
+	private JTextField textQuantitat;
+	private JRadioButton euro_a_Dolar, dolar_a_Euro;
+	private JButton botoConvertir;
+	private JLabel labelResultat;
+	
+	
+	
+	
 	
 }
