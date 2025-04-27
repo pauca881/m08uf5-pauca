@@ -38,7 +38,12 @@ public class Conversor extends JFrame {
         panelRadio.add(dolar_a_Euro);
         add(panelRadio);
         
-		
+        botoConvertir = new JButton("Convertir");
+        add(botoConvertir);
+        
+        labelResultat = new JLabel("Resultat: ");
+        add(labelResultat);
+        
 		
 	}
 	
