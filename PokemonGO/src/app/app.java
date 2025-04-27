@@ -56,8 +56,8 @@ public class app {
 	             System.out.println("3. Consultar Datos Entrenador");
 	             System.out.println("4. Listar Entrenadores");
 	             System.out.println("5. Dar de alta Pokemon");
-	             System.out.println("6. Cazar pokemon");
-	             System.out.println("7. Listar Pokemons cazados");
+	             System.out.println("6. Pokemon random");
+	             System.out.println("7. Listar Pokemons");
 	             System.out.println("8. Listar tipos Pokemon existentes en juego");
 	            
 	            opcio = scanner.nextInt();
@@ -76,6 +76,7 @@ public class app {
 	                break;
 	            case 3:
 	                System.out.println("Consultar Datos Entrenador");
+			System.out.println("Mètode pendent de finalitzar");
 	                break;
 	            case 4:
 	                System.out.println("Listar Entrenadores");
@@ -86,10 +87,12 @@ public class app {
 	            	crear_pokemon();
 	                break;
 	            case 6:
-	                System.out.println("Cazar pokemon");
+	                System.out.println("Pokemon random");
+			pokemonDAO.getPokemonRandom();
 	                break;
 	            case 7:
-	                System.out.println("Listar Pokemons cazados");
+	                System.out.println("Listar Pokemons");
+			llistar_pokemons();
 	                break;
 	            case 8:
 	                System.out.println("Listar tipos Pokemon existentes en juego");
@@ -239,8 +242,27 @@ public class app {
 		
 		
 	}
-		
+
 	
+		
+		private static void llistar_pokemons() throws SQLException {
+
+		
+		List<Pokemon> pokemons_actuals = pokemonDAO.getListPokemon();
+		
+	    if (pokemons_actuals != null && !pokemons_actuals.isEmpty()) {
+	    	
+	        for (Pokemon pokemon : pokemons_actuals) {
+	            System.out.println("ID ( pokedex ): " + pokemon.getNumero_pokedex() + ", Nom: " + entrenador.getName() + ", Type: " + entrenador.getType());
+	        }
+	    } else {
+
+	        System.out.println("No hi ha pokedexs a la bbdd");
+	    }
+		
+		
+		
+	}
 
 	
 }

@@ -1,0 +1,100 @@
+Programarem el popular Pokémon go, versió cutre-Java ;). Per als qui no sàpiguen de què va, és un joc on apareixen diferents pokémon que s'intenten capturar llençant una pokeball. Quan el captures s'afegeix a la teva motxilla, on se t'acumulen els pokémons.
+En la nostra versió el joc serà de la següent manera:
+T’identificaras com usuari, si no has jugat mai et demanaran el password i et donarà d’alta, i si has jugat el password te que ser correcte.
+Et sortiran pokemons amb diferents nivells de força, i els capturaras si encertes el seu número que  dependra de la força
+Podràs veure quants pokémons tens a la teva motxilla
+El joc real és molt més complex però sol farem aquestes funcionalitats.
+MOLT IMPORTANT: EN SER UN PROGRAMA AMB MOLT CODI, ÉS MOLT IMPORTANT LA PROGRAMACIÓ MODULAR I PENSAR BÉ LA FUNCIONALITAT DE CADA FUNCIÓ.
+EL MAIN HA DE SER SIMPLE, I A PARTIR D’ALLÍ S’HA DE FER MOLTES FUNCIONS. Teniu que respectar almenys la part de MODEL, encara que estaria bé que fessim la vista separada NO SERA OBLIGATORI.
+El nostre programa només començar ha de mostrar una carátula del joc, agafar la primera imatge de asciiart.eu, la guardarem a un fitxer que anomenarem logo.pok, NO amb extensió txt. 
+
+A partir d’alli, podras donar de alta/baixa entrenador.
+Els pokémons trobats es guardaran relacionats amb el entrenador que els ha capturat.
+
+
+FASE 1
+
+A la primera fase només executar el programa es mostrarà la caràtula.
+Realment el que mostrareu és el contingut del fitxer(logo.pok). Per aquesta part crearem un objecte FitxerCaratula que tingui la ruta del fitxer en atributs i ha de tenir un mètode per carregar totes les línies a un arrayList de String (CargarCaratula) (5%). Basat amb els que hem fet a classe per llegir linea a linea, però ho ha de llegir tot, encara que hi ha diferents, el nom del fitxer sempre és el mateix.
+Al main és recollirà aquest arrayList i es mostrarà a la pantalla.
+Un cop fet això ha de sortir un menú amb les opcions següents:
+0.- Salir
+1.- Dar de alta entrenador
+2.- Dar de baja entrenador
+3.-Consultar Datos Entrenador
+4.-Listar Entrenadores
+5.-Dar de alta Pokemon
+6.-Cazar pokemon
+7.-Listar Pokemons cazados.
+8.-Listar tipos Pokemon existentes en juego.
+Amb el 0 s'ha de sortir , i si dones a les altres opcions ara com ara només ha de sortir una frase dient “Aquestes a l'opció …” on sigui el text de l'opció escollida.
+
+FASE 2 DISSENY DE BASE DE DADES
+
+El joc consistirà en diferents entrenadors que van capturant diferents pokémons (poden ser pokémons repetits)
+Crea una base de dades, a mysql per poder guardar entrenadors pokémon (nom i password, a més d'un id autoincremental, fixar-se en base dades països creada a classe). Encara que l'id és el camp clau, també heu de definir la taula perquè no es puguin donar d'alta entrenadors amb el mateix nom i en cas d’insertarlo doni error (Pista: Index bd)
+A la base de dades s'haurà de guardar Pokémon on es guardarà el seu número de Pokedex, nom Pokémon, tipus (només un tipus encara que sigui de més). No s'ha de poder donar d'alta pokémon amb el mateix número. El número no es autoincremental.
+També hi ha d'haver una taula per poder anar guardant els Pokémons capturats, els Pokémons capturats es poden repetir però en cada captura, la força de combat del Pokémon, pot ser diferent (no és obligatori que sigui diferent).
+Realitza alta d'alguns entrenadors i 4-5 Pokémons. i una captura per provar
+Per fer tot això, realitza un script similar al donat a classe a l'exemple de països (Wiki)  Us podeu ajudar del chatgpt, però per petites coses, amb el script de paisos, podrieu fer-ho quasi tot el que us demano.
+
+FASE 3 Entrenador (a/b/c/d)
+
+Crear una classe Entrenador amb els camps importants (getter, setter, equals i constructor amb nom i contrasenya). També ens podria interessar crear un constructor amb tots els camps de la base de Dades, si en algun moment , veus que el necessites, el pots crear. El ToString això sí, sol te que mostrar els noms IMPORTANTS (nom i contrasenya)
+Crear una classe DAOEntrenadors, per poder accedir a la base de dades dels entrenadors. Aquí hi ha d’haver atributs per poder fer una conexió a base de dades i en el moment del constructor, fer la connexió i deixar-la oberta (i utilitzar-la aquesta conexió per tots els mètodes, no tancar-la)
+Amb els mètodes següents.
+-AltaEntrenador (Entrenador), donarà d'alta un entrenador, sempre que no hi hagi un entrenador amb el mateix nom.
+-ExisteixEntrenador(String name) retorna un objecte Entrenador amb tots els seus atributs informats, o null, si no existeix.
+-esborrarEntrenador(Entrenador) o esborrarEntrenador(name), una de les dues opcions,  retornarà l'entrenador esborrat (si existia) i l’elimina de la base de dades, o torna null si no existia. 
+-totsEntrenadors(), retornarà una llista amb tots els entrenadors.
+-tancarConexió(), tanca la conexió oberta, mètode que s’ha de cridar quant és tanqui el programa, al sortir i a tots els catch del main també estaria bé cridar-lo per no deixar la conexió oberta.
+
+FASE 4 
+
+Després de la carátula i abans del menú, et demanarà que t'identifiquis, demana user i password.
+El programa ha de comprovar si existeix:
+Si no existeix, ho donarà d'alta, amb el password introduït, i dirà Benvingut “nom” i posarà el menú
+Si existeix i el password és incorrecte informarà i acabarà el programa
+Si existeix i el password correcte, informarà que és correcte i anirà al menú. (0,75 pt)
+
+FASE 5a Alta i baixa (a/b/c/d)
+
+Realitzar l'opció 1 del menú
+Demanar dades d'entrenador i donar-lo d'alta, si el nom ja existeix ha d’avisar amb una exception i ha d’avisar
+Realitzar opció 2 del menú
+Demanar nom d'entrenador i si existeix esborrar-ho.
+Realitzar opció 3 del menú
+Consultar dades d’entrenador
+Realitzar opció 4 del menú
+Llistar els noms dels entrenadors existents.  
+
+FASE 5b Pokemon
+
+1. Crear la classe Pokemon:
+ Primer, crea la classe Pokemon amb els atributs que hi ha a la base de dades. Afegeix els mètodes setters i getters per poder accedir i modificar aquests atributs. També implementa el mètode toString(), que permetrà mostrar la informació completa del Pokémon de manera fàcil i llegible. A més, crea un o més constructor que permeti inicialitzar un objecte Pokemon amb tots els atributs. Aquí hi ha d’haver atributs per poder fer una conexió a base de dades i en el moment del constructor, fer la connexió i deixar-la oberta (i utilitzar-la aquesta conexió per tots els mètodes, no tancar-la)
+Crear un DAO per accedir a la base de dades:
+ Crea un objecte DAO (Data Access Object) per poder interactuar amb la base de dades. Implementa els següents mètodes:
+
+
+AltaPokemon(Pokemon nuevo): Aquest mètode s'encarregarà d'inserir un nou Pokémon a la base de dades, sempre que no existeixi un Pokémon amb els mateixos atributs.
+getPokemonRandom(): Aquest mètode ha de retornar un objecte Pokemon aleatori entre tots els Pokémon existents a la base de dades, amb tots els seus atributs complets, segons la taula de la base de dades.
+getListPokemon(): Aquest mètode retornarà una llista (List) amb tots els Pokémon existents a la base de dades.
+Implementar l'opció 5 del menú:
+ Implementa l'opció 5 del menú, que cridarà al mètode getPokemonRandom() per obtenir un Pokémon aleatori. Quan el jugador selecciona l'opció de captura, el sistema ha de mostrar les característiques d'aquest Pokémon aleatori per pantalla.
+Implementar l'opció 8 del menú:
+ Implementa l'opció 8 del menú, que cridarà al mètode getListPokemon() per mostrar una llista amb tots els Pokémon registrats a la base de dades. Recorda que tots els llistats han de mostrar el número total de registres que es mostren en la llista.
+D'aquesta manera, els usuaris podran veure els Pokémon disponibles i realitzar accions amb ells de manera interactiva, com la captura o consultar tots els Pokémon que hi ha a la base de dades.
+-tancarConexió(), tanca la conexió oberta, mètode que s’ha de cridar quant és tanqui el programa, al sortir i a tots els catch del main també estaria bé cridar-lo per no deixar la conexió oberta.
+
+FASE 5c Mostrar Pokémon que ha sortit
+
+En aquesta fase, mostrarem de manera gràfica el Pokémon que ens ha sortit.
+D’aquesta web on han creat diferents pokémons, en mode ascii descarregueu mínim 7 pokemons, si pot ser alguns que estiguin a la teva base de dades, i guarda'ls en diferents fitxers, que es diguin igual que el pokémon, amb extension .pok.
+Un cop fet això, quan donem a l'opció 5, i ens torna el Pokémon d'aleatori, agafarem el nom del Pokémon i obrirem el fitxer, amb el mateix nom i extensió Pok. Per fer això crearem una classe similar a la de la Caratula, però que es digui FicherosPokemon, i obriu tot l'arxiu, el carregueu en una List de String i el torneu. Si no existeix aquest fitxer, que carregueu, un Pokémon per defecte, crea un fitxer default.pok, amb algun Pokémon rar i que obri aquest.
+Després es mostri per pantalla (1,25)
+
+
+
+
+
+
