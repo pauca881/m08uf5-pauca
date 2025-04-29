@@ -57,8 +57,17 @@ public class Conversor extends JFrame {
 	// Només té un mètode: void actionPerformed(ActionEvent e)
 		
 	botoConvertir.addActionListener(new ActionListener(){
+		//TO DO: ficar tot en un try per si el user no fica un num correcte
+		@Override
+		public void actionPerformed(ActionEvent e){
 
+		    double quantitat = Double.parseDouble(textQuantitat.getText());
+                    double resultat = 0.0;
+                    String text = "";
 
+			
+		}
+	
 		
 	}
         
