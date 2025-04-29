@@ -43,6 +43,13 @@ public class Conversor extends JFrame {
         
         labelResultat = new JLabel("Resultat: ");
         add(labelResultat);
+
+	//actionlistener
+	botoConvertir.addActionListener(new ActionListener(){
+
+
+		
+	}
         
 		
 	}
