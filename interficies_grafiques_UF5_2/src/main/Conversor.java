@@ -64,6 +64,10 @@ public class Conversor extends JFrame {
 		    double quantitat = Double.parseDouble(textQuantitat.getText());
                     double resultat = 0.0;
                     String text = "";
+		    double canvi = 1.09;
+
+		    
+		
 
 			
 		}
