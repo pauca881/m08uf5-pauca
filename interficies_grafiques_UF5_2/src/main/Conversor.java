@@ -61,6 +61,8 @@ public class Conversor extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e){
 
+			try{ 
+				
 		    double quantitat = Double.parseDouble(textQuantitat.getText());
                     double resultat = 0.0;
                     String text = "";
@@ -77,12 +79,17 @@ public class Conversor extends JFrame {
 			text = String.format("%.2f $ són %.2f €", quantitat, resultat);			    
 		    }
 			else{
-				text="Selecciona una opció de conversió"
+				text="Selecciona una opció de conversió";
 			}
 
 			labelResultat.setText("Resultat: " + text);
 	
-		
+		}
+			catch(NumberFormatException ex){
+
+				labelResultat.setText("Introdueix una quantitat vàlida");
+				
+			}
 
 			
 		}
