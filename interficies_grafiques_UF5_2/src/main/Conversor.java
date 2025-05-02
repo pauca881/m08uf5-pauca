@@ -66,7 +66,13 @@ public class Conversor extends JFrame {
                     String text = "";
 		    double canvi = 1.09;
 
-		    
+		    if(euro_a_Dolar.isSelected()){
+			resultat = quantitat * canvi;
+			//Format de string
+			// .% posició on s'inserta el valor
+			// 2f. Float amb 2 decimals
+			text = String.format("%.2f € són %.2f $", quantitat, resultat);			    
+		    } 	
 		
 
 			
