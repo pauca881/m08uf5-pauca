@@ -96,7 +96,9 @@ public class Conversor extends JFrame {
 	
 		
 	}
-        
+		//diu a Java que obri la finestra un cop està tota configurada (amb botons, camps de text, etc.).
+		setVisible(true);
+
 		
 	}
 	
