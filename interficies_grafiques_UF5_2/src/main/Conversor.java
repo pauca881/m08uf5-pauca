@@ -72,7 +72,14 @@ public class Conversor extends JFrame {
 			// .% posició on s'inserta el valor
 			// 2f. Float amb 2 decimals
 			text = String.format("%.2f € són %.2f $", quantitat, resultat);			    
-		    } 	
+		    }else if(dolar_a_Euro.isSelected()){
+			resultat = quantitat / canvi;
+			//Format de string
+			// .% posició on s'inserta el valor
+			// 2f. Float amb 2 decimals
+			text = String.format("%.2f $ són %.2f €", quantitat, resultat);			    
+		    }
+	
 		
 
 			
