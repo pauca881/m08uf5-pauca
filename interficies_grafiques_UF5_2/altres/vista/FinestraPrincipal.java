@@ -59,6 +59,15 @@ public class FinestraPrincipal extends JFrame implements ActionListener{
         afegirComponents();
         this.setVisible(true);        
     }
+
+    // Components que estaràn dins la finestra
+    private void afegirComponents(){
+
+        disposicioConversorMoneda();
+        crearMenu();
+
+        
+    }
     
 
   
