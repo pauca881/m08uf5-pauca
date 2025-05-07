@@ -29,6 +29,25 @@ public class FinestraPrincipal extends JFrame implements ActionListener{
 
     ActionListener listener;
     ActionListener lis1;
+
+    //constructor
+    public class FinestraPrincipal(String title){
+    
+    //todo entendre
+    listener = this;
+
+    //Cuando se pulse a un botón enlazado al actionListener lis1, se imprimirá esto
+    lis1 = new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.out.println("Soy independiente");
+            
+        }       
+    };
+
+        initComponents(title);
+    
+    }
     
 
   
