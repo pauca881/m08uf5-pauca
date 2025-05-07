@@ -48,6 +48,17 @@ public class FinestraPrincipal extends JFrame implements ActionListener{
         initComponents(title);
     
     }
+
+    private void initComponents(String title){
+        
+        //this hace referenncia alm objeto actual, es decir, al JFrame   
+        this.setTitle(title);
+        this.setSize(80, 300);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        afegirComponents();
+        this.setVisible(true);        
+    }
     
 
   
