@@ -31,7 +31,33 @@ public class contador extends JFrame {
     	modeldata = new model_data();
         contador = 0;
         
+        // Crear JLabel
+        label = new JLabel("Contador V1.0", SwingConstants.CENTER);
+        label.setFont(new Font("Arial", Font.PLAIN, 24));
         
+        // Crear barra de menú
+        menuBar = new JMenuBar();
+        menu = new JMenu("Menú");
+        menuItem = new JMenuItem("Carregar Contador");
+        menu.add(menuItem);
+        menuBar.add(menu);
+        setJMenuBar(menuBar);
+        
+        menuItem.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				carregar_contador_panell();
+
+				
+			}
+
+			private void carregar_contador_panell() {
+				// TODO Auto-generated method stub
+				
+			}
+		});
     	
       	
     	
