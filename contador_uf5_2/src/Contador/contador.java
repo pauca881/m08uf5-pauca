@@ -21,7 +21,7 @@ public class contador extends JFrame {
     //model incrementar
     private model_data modeldata;
 
-    public finestra_principal() {
+    public contador() {
     	
     	//configuració finestra principal
     	setTitle("Exercici contador M03 Pau");
@@ -68,12 +68,38 @@ public class contador extends JFrame {
         // Mostrar finestra
         setVisible(true);
         
-        
+       
+    }
+    
+    
+    private void carregar_contador_panell() {
+    	
+    	
+    	// Crear un nou JPanel amb botó
+        counterPanel.removeAll();  // Neteja el panell existent
+        counterPanel.setLayout(new FlowLayout());
 
+        // Botó per incrementar el contador
+        incrementButton = new JButton("Incrementar");
+        incrementButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                contador = model_data.incrementar(contador);
+                JOptionPane.showMessageDialog(null, "Contador: " + contador);
+            }
+        });
+
+        // Afegir el botó al panell
+        counterPanel.add(incrementButton);
+
+        // Actualitza el panell
+        counterPanel.revalidate();
+        counterPanel.repaint();
+    	
     	
     	
     	
     }
+    
 	
     
     public static void main(String[] args) {
