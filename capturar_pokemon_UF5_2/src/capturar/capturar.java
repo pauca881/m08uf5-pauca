@@ -9,7 +9,18 @@ public class capturar extends JFrame {
 
 	
 	//constructorJFrame
-	public capturar() {}
+	public capturar() {
+		
+		setTitle("Canvi d'imatge");
+		setSize(400, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //aquest panell conté imatge i botó
+        setContentPane(new PanellImatge());
+
+		
+		
+	}
 	
 	
 }
