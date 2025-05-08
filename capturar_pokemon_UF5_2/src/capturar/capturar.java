@@ -15,7 +15,7 @@ public class capturar extends JFrame {
 		setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //aquest panell conté imatge i botó
+        //aquest panell conté imatge i botó, es una clase container
         setContentPane(new PanellImatge());
 
 		
