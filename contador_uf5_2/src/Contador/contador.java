@@ -53,9 +53,7 @@ public class contador extends JFrame {
 	
 		});
         
-        
- 
-    	
+
       	
         
         // Afegeix el JLabel a la finestra
