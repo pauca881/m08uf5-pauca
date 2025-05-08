@@ -21,6 +21,23 @@ public class contador extends JFrame {
     //model incrementar
     private model_data modeldata;
 
+    public finestra_principal() {
+    	
+    	//configuració finestra principal
+    	setTitle("Exercici contador M03 Pau");
+    	setSize(400, 300);
+    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	
+    	modeldata = new model_data();
+        contador = 0;
+        
+        
+    	
+      	
+    	
+    	
+    	
+    }
 	
 
 	
