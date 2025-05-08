@@ -48,23 +48,37 @@ public class contador extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				carregar_contador_panell();
-
-				
+				carregar_contador_panell();				
 			}
-
-			private void carregar_contador_panell() {
-				// TODO Auto-generated method stub
-				
-			}
+	
 		});
+        
+        
+ 
     	
       	
+        
+        // Afegeix el JLabel a la finestra
+        add(label, BorderLayout.NORTH);
+
+        // Inicia amb un panell buit
+        counterPanel = new JPanel();
+        add(counterPanel, BorderLayout.CENTER);
+
+        // Mostrar finestra
+        setVisible(true);
+        
+        
+
     	
     	
     	
     }
 	
+    
+    public static void main(String[] args) {
+        new contador();
+    }
 
 	
 }
