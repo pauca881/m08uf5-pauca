@@ -10,7 +10,16 @@ public class PantallaAlumnes extends JFrame{
 	public PantallaAlumnes(GestorAlumnesDAO model) {
 		
 		
+		setTitle("Gestió d'alumnes");
+		setSize(400, 200);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+        //centra la pantalla quan s'obre
+        setLocationRelativeTo(null);
+
+		
 		carregarPanell(model);
+		setVisible(true);
 		
 		
 	}
