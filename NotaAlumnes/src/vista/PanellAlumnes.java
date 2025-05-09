@@ -14,7 +14,7 @@ import model.GestorAlumnesDAO;
 import model.Persona;
 
 
-public class PanellAlumnes {
+public class PanellAlumnes extends JPanel {
 	
 	
 	private GestorAlumnesDAO model;
