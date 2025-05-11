@@ -1,5 +1,7 @@
 package Vista;
 
-public class LlistaNoms {
+import javax.swing.JPanel;
+
+public class LlistaNoms extends JPanel {
 
 }
