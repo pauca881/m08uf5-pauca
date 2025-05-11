@@ -26,7 +26,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 	
 	public VentanaPrincipal() {
 		
-		
 		listener = this;
         initComponents();
         crearMenu();
@@ -40,11 +39,17 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         JMenuBar barra = new JMenuBar();
         JMenu menu = new JMenu("Principal");
         JMenuItem ventana = new JMenuItem("Ventana Calculo");
+        
+        //aquest "ventanaprincipal" es ficarà al case del switch
         ventana.setActionCommand("ventanaprincipal");
+        
+        //quan es cliqui a ventana, s'anirà al actionListener
         ventana.addActionListener(listener);
+        
         menu.add(ventana);
         JMenuItem exit = new JMenuItem("Exit...");
         menu.add(exit);
+        
         JMenu menu2 = new JMenu("Calculos");
         JMenuItem calc = new JMenuItem("Calcular");
         menu2.add(calc);
@@ -73,6 +78,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 
 	private void carregarPanel() {
 
+		//és mètode de JFrame que estableix que component serà el contingut principal
+		// de la finestra
 		this.setContentPane(new InitApp());
 		
 	}
