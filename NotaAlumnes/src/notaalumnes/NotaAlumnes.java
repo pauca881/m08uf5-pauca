@@ -16,6 +16,7 @@ public class NotaAlumnes {
 		//Sense anar a fons, fa que tot el codi s'executi en un únic fil,
 		//no està dissenyat perque diferents fils modifiquin la interfaç gràfica
 		
+		//aquest invokelater està utilitzant un lambda, igual que el que s'utilitza normal
 		SwingUtilities.invokeLater(() -> {
 			
 			PantallaAlumnes finestra = new PantallaAlumnes(model);
