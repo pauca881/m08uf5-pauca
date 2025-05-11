@@ -1,11 +1,23 @@
 package imc;
 
+import javax.swing.SwingUtilities;
+
+import vista.VentanaPrincipal;
+
 public class IMC {
 	
-	public double IMCCalc(double height, double weight) {
+
+	public static void main(String[] args) {
 		
-		double IMC = weight / (height*height);
-		return IMC;
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override	
+			public void run() {
+					VentanaPrincipal window = new VentanaPrincipal();
+				}
+			
+			
+			
+		});
 		
 	}
 

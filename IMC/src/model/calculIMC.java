@@ -5,17 +5,11 @@ import vista.VentanaPrincipal;
 
 public class calculIMC {
 	
-	public static void main(String[] args) {
+	
+public double IMCCalc(double height, double weight) {
 		
-		SwingUtilities.invokeLater(new Runnable() {
-			@Override	
-			public void run() {
-					VentanaPrincipal window = new VentanaPrincipal();
-				}
-			
-			
-			
-		});
+		double IMC = weight / (height*height);
+		return IMC;
 		
 	}
 
