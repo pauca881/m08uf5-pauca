@@ -44,3 +44,17 @@ public class LlistaAssistents {
                 comptador.put(tipus, 1);
             }
     }
+         return comptador;
+    }
+
+    public int totalAssistents() {
+        return assistents.size();
+    }
+    public int carregaLlistaAssistents(List<Assistent> inicial)
+    {
+        for (Assistent assistent : inicial) {
+            assistents.add(assistent);
+        }
+        return inicial.size();
+    }
+}
