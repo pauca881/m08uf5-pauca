@@ -20,3 +20,27 @@ public class LlistaAssistents {
     public List<Assistent> getTots() {
         return assistents;
     }
+
+    public double calcularEdatMitjana() {
+        if (assistents.isEmpty()) return 0;
+
+        int sumaEdats = 0;
+
+        for (Assistent assistent : assistents) {
+            sumaEdats += assistent.getEdat();
+        }
+
+        return (double) sumaEdats / assistents.size();
+    }
+
+    public Map<String, Integer> comptarPerTipusEntrada() {
+        Map<String, Integer> comptador = new HashMap<>();
+
+        for (Assistent assistent : assistents) {
+            String tipus = assistent.getTipusEntrada();
+            if (comptador.containsKey(tipus)) {
+                comptador.put(tipus, comptador.get(tipus) + 1);
+            } else {
+                comptador.put(tipus, 1);
+            }
+    }
