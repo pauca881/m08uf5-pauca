@@ -12,3 +12,11 @@ public class LlistaAssistents {
     public LlistaAssistents() {
         this.assistents = new ArrayList<>();
     }
+
+ public void afegirAssistent(Assistent a) {
+        assistents.add(a);
+    }
+
+    public List<Assistent> getTots() {
+        return assistents;
+    }
