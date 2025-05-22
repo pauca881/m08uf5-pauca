@@ -16,4 +16,10 @@ public interface GestorAssistentsInterface {
     /* Calcula i retorna l�edat mitjana dels assistents */
     double calcularEdatMitjana();
 
+        /* Compta quants assistents hi ha per cada tipus d�entrada i retorna un mapa */
+    Map<String, Integer> comptarPerTipusEntrada();
+
+    /* Retorna el nombre total d�assistents registrats */
+    int totalAssistents();
+
 }
