@@ -22,4 +22,7 @@ public interface GestorAssistentsInterface {
     /* Retorna el nombre total d�assistents registrats */
     int totalAssistents();
 
+     /* Carrega una llista inicial d�assistents i retorna quants s�han afegit */
+    int carregaLlistaAssistents(List<Assistent> inicial);
+
 }
